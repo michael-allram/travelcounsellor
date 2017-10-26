@@ -7,7 +7,7 @@ A team project for the course "Web Services" at Innsbruck University.
 
 * We keep the main files (html + php) in the top directory. 
 * CSS and JS files are kept in subdirectories.
-* Project Material (for example Powerpoint Slides for the project presentation) are stored in the subfolder "Project-Files"
+* Project Material (for example Powerpoint Slides for the project presentation) are stored in the subfolder "Documentation"
 
 
 ## Technical hints
