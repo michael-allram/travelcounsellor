@@ -28,3 +28,9 @@ Thanks to OpenWeather we'll also be able to give the user weather informations f
 
 
 # Technologies
+
+- HTTP
+- CSS
+- JavaScript
+- PHP
+- MariaDB / SQL
