@@ -11,6 +11,8 @@
             alert("mainjs loaded");
 			$('#street').typeWatch({
 				captureLength: 2,
+				wait: 1750,
+    				highlight: true,
 				callback: function(value) {
 					alert("typing finished");
 				}
