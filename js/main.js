@@ -6,19 +6,19 @@
 // allowSubmit: Allows a non-multiline element to be submitted (enter key) regardless of captureLength
 // captureLength: Minimum # of characters necessary to fire the callback
 
-		$(document).ready(function() {
+$(document).ready(function() {
             
-            alert("mainjs loaded");
-			$('#street').typeWatch({
-				captureLength: 2,
-				wait: 1750,
-    				highlight: true,
-				callback: function(value) {
-					//alert("typing finished");
-					street_to_geo(value);
-				}
-			});
-		});
+	alert("mainjs loaded");
+	$('#street').typeWatch({
+		captureLength: 2,
+		wait: 1750,
+    		highlight: true,
+		callback: function(value) {
+			//alert("typing finished");
+			street_to_geo(value);
+		}
+	});
+});
 
 
 function street_to_geo(street){
