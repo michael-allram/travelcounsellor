@@ -7,8 +7,7 @@
 // captureLength: Minimum # of characters necessary to fire the callback
 
 $(document).ready(function() {
-            
-	alert("mainjs loaded");
+         
 	$('#street').typeWatch({
 		captureLength: 2,
 		wait: 1750,
