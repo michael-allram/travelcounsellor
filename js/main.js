@@ -6,8 +6,9 @@
 // allowSubmit: Allows a non-multiline element to be submitted (enter key) regardless of captureLength
 // captureLength: Minimum # of characters necessary to fire the callback
 
+alert("mainjs loaded");
 var options = {
-    callback: function (value) { alert("street entered");},
+    callback: function (value) { alert("street entered"); street_to_geo(value);},
     wait: 750,
     highlight: true,
     allowSubmit: false,
