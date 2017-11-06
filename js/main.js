@@ -15,6 +15,7 @@
     				highlight: true,
 				callback: function(value) {
 					alert("typing finished");
+					street_to_geo(value);
 				}
 			});
 		});
