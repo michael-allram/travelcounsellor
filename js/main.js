@@ -14,7 +14,7 @@
 				wait: 1750,
     				highlight: true,
 				callback: function(value) {
-					alert("typing finished");
+					//alert("typing finished");
 					street_to_geo(value);
 				}
 			});
@@ -25,7 +25,7 @@ function street_to_geo(street){
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "http://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
-      alert(uri);
+      //alert(uri);
       //makes the the jquery call and gets json back 
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
