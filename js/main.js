@@ -1,5 +1,5 @@
 
-// Wait for user finishing typing
+// Wait for user to finish typing
 // callback: The callback function
 // wait: The number of milliseconds to wait after the the last key press before firing the callback
 // highlight: Highlights the element when it receives focus
