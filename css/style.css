@@ -33,3 +33,9 @@ body {
  text-align: center; 
  margin-top: 50px;
 }
+
+#main-area {
+ background-color: blue;
+ margin: 10px;
+ min-height: 100px; 
+}
