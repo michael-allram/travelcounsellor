@@ -7,7 +7,7 @@
 // captureLength: Minimum # of characters necessary to fire the callback
 
 $(document).ready(function() {
-         
+
 	$('#street').typeWatch({
 		captureLength: 2,
 		wait: 1750,
@@ -49,4 +49,43 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
+function get_places(lat,long,category){
+	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+	var method = "POST";
+	var postData = "key=AIzaSyARggcxgxIl3yr-G4A_oeK15zOW2FPFY5Q";	//location=-33.8670522,151.1957362&radius=500&type=restaurant&
+	postData += "location=" + lat + "," + long;
+	postData += "radius=5000";	// 5km, could be changed or added as a configurable later
+	postData += "type=" + category;
 
+	// if it is not true, it'll block ALL execution waiting for server response.
+	var shouldBeAsync = true;
+
+	var request = new XMLHttpRequest();
+
+	// This function attached to the XMLHttpRequest "onload" property specifies how
+	// the HTTP response will be handled.
+	// request.onreadystatechange can also be used if this doesn't work
+	request.onload = function () {
+	   // You can get all kinds of information about the HTTP response.
+	   var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+	   var data = request.responseText; // Returned data, e.g., an HTML document.
+	}
+
+	request.open(method, url, shouldBeAsync);
+
+	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+	// Actually sends the request to the server.
+	request.send(postData);
+
+	// because the call/answer is abynchronous I'm not sure the following is correct
+	// we couls also treat the data in the function above and call whatever needs to know what the date is from there instead of returning it
+	var jsObj = null;
+
+	if (status == 200) {
+		jsObj = data.results;
+		// TODO: order the data
+	}
+
+	return jsObj;
+}
