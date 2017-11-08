@@ -49,7 +49,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(lat,long,category){
+function get_places(lat, long, category) {
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 	var method = "POST";
 	var postData = "key=AIzaSyARggcxgxIl3yr-G4A_oeK15zOW2FPFY5Q";	//location=-33.8670522,151.1957362&radius=500&type=restaurant&
@@ -62,13 +62,22 @@ function get_places(lat,long,category){
 
 	var request = new XMLHttpRequest();
 
-	// This function attached to the XMLHttpRequest "onload" property specifies how
-	// the HTTP response will be handled.
+	// This function attached to the XMLHttpRequest "onload" property specifies how the HTTP response will be handled.
 	// request.onreadystatechange can also be used if this doesn't work
 	request.onload = function () {
-	   // You can get all kinds of information about the HTTP response.
-	   var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-	   var data = request.responseText; // Returned data, e.g., an HTML document.
+		// You can get all kinds of information about the HTTP response.
+		var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+		var data = request.responseText; // Returned data, e.g., an HTML document.
+
+		var jsObj = null;
+
+		if (status == 200) {
+			jsObj = data.results;
+			add_details(jsObj, lat, long);
+			sort_json(jsObj, 'rating_over_distance', false);	// false because we want descending order
+		}
+
+		// TODO: call whatever needs to use the jsObj
 	}
 
 	request.open(method, url, shouldBeAsync);
@@ -77,15 +86,25 @@ function get_places(lat,long,category){
 
 	// Actually sends the request to the server.
 	request.send(postData);
+}
 
-	// because the call/answer is abynchronous I'm not sure the following is correct
-	// we couls also treat the data in the function above and call whatever needs to know what the date is from there instead of returning it
-	var jsObj = null;
-
-	if (status == 200) {
-		jsObj = data.results;
-		// TODO: order the data
+function add_details(json_object, lat, long) {
+	for ( x in json_object) {
+		json_object[x].distance = calc_distance(lat, lon, json_object[x].geometry.location.lat, json_object[x].geometry.location.lng);
+		json_object[x].rating_over_distance = json_object[x].rating/json_object[x].distance;
 	}
+}
 
-	return jsObj;
+function sort_json(json_object, key_to_sort_by, ascending) {
+    function sortByKey(a, b) {
+        var x = a[key_to_sort_by];
+        var y = b[key_to_sort_by];
+        if (ascending ==  true) {
+        	return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        } else {
+        	return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+    }
+
+    json_object.sort(sortByKey);
 }
