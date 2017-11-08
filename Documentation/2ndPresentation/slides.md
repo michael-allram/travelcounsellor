@@ -31,4 +31,5 @@ date: 2017-10-24
 
 # Basic Google places API interaction
 
-[comment]: <> (Etienne TODO: describe progress in a few bullet points)
+- We can request and receive details about an selected area
+- We order the results in a particular to present the most desirable results at the top
