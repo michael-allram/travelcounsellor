@@ -108,3 +108,23 @@ function sort_json(json_object, key_to_sort_by, ascending) {
 
     json_object.sort(sortByKey);
 }
+
+//returns a Coordinate, could add some other functionality of what to do when geolocation is not supported
+var pos;
+function get_my_location(){
+	var options = {
+	  enableHighAccuracy: true
+	};
+	if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+      }, 
+      function(err){},
+      options);
+    } 
+	return pos;
+}
+
