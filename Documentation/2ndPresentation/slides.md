@@ -11,11 +11,12 @@ date: 2017-10-24
 - We've divided the work into different issues and are working on it individually and as a group
 
 
-# Basic view and functionnalities
+# Basic view and functionality
 
 ![draft](../draft.png "draft")
 
-[comment]: <> (include progress description of HTML + CSS frontend Design)
+- As of yet, fairly rough design
+- Mobile support
 
 
 # Basic Weather API interaction
@@ -27,7 +28,8 @@ date: 2017-10-24
 
 [comment]: <> (Michael/Tobias TODO: describe progress in a few bullet points)
 
-[comment]: <> (include progress description of MyPosition)
+- Is fairly simple with modern browsers
+- However, it is not very reliable for machines without GPS (eg. desktop PCs)
 
 # Basic Google places API interaction
 
