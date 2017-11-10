@@ -8,12 +8,14 @@ date: 2017-10-24
 # Plan
 
 - After the first presentation some issues had to be addressed
-- We've divided the work into different issues and are working on it individually and as a group
+- We've divided the work into different categories and are working on it individually and as a group
 
 
 # Basic view and functionality
 
 ![draft](../draft.png "draft")
+
+# Basic view and functionality
 
 - As of yet, fairly rough design
 - Mobile support
@@ -23,7 +25,7 @@ date: 2017-10-24
 
 - Got api-key from openweather.com
 - Javascript function implemented
-- Gets wheatherdescription (cloudy, sunny .. ) by geoposition
+- Gets weather description (cloudy, sunny .. ) by geoposition
 
 # Getting Geoposition by Street, City or Landmark
 
