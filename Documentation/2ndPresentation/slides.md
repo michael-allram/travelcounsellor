@@ -25,6 +25,11 @@ date: 2017-10-24
 - Javascript function implemented
 - Gets wheatherdescription (cloudy, sunny .. ) by geoposition
 
+# Geting Geoposition by Street, City or Landmark
+
+- Technology: OpenStreetMap API
+- Users can enter the Street, a City or a Landmark and the function returns the geoposition (latitude, longitude)
+- Jquery Plugin "TypeWatch": It waits until the user has finished typing and then the function is executed
 
 # Getting Geoposition
 
