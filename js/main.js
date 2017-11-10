@@ -52,7 +52,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 function get_places(lat, long, category) {
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 	var method = "POST";
-	var postData = "key=AIzaSyARggcxgxIl3yr-G4A_oeK15zOW2FPFY5Q";	//location=-33.8670522,151.1957362&radius=500&type=restaurant&
+	var postData = "";	// TODO get key
 	postData += "location=" + lat + "," + long;
 	postData += "radius=5000";	// 5km, could be changed or added as a configurable later
 	postData += "type=" + category;
@@ -129,7 +129,7 @@ function get_my_location(){
 }
 
 function get_weather(lat, lon){
-    var apikey = "9f0df58f5f90d016769679752362fe02";
+    var apikey = "";	// TODO get key
     var api_url = "//api.openweathermap.org";
     var api_request = api_url;
 
