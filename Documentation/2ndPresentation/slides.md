@@ -21,7 +21,9 @@ date: 2017-10-24
 
 # Basic Weather API interaction
 
-[comment]: <> (Alex TODO: describe progress in a few bullet points)
+- Got api-key from openweather.com
+- Javascript function implemented
+- Gets wheatherdescription (cloudy, sunny .. ) by geoposition
 
 
 # Getting Geoposition
