@@ -128,3 +128,30 @@ function get_my_location(){
 	return pos;
 }
 
+function get_weather(lat, lon){
+    var apikey = "9f0df58f5f90d016769679752362fe02";
+    var api_url = "//api.openweathermap.org";
+    var api_request = api_url;
+
+    api_request +=  "/data/2.5/weather?lat=";
+    //document.write(api_request);
+
+    api_request += lat;
+    api_request += "&lon="
+    api_request += lon;
+    api_request += "&APPID="
+    api_request += apikey;
+
+
+    //document.write(api_request);
+
+    $(function () {
+        $.getJSON(
+            api_request,
+            function (data) {
+                $("#reply").html(JSON.stringify(data));
+                return(JSON.stringify(data.weather[0].main));
+            });
+    });
+
+}
