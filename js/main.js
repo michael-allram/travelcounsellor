@@ -129,19 +129,18 @@ function get_my_location(){
 }
 
 function get_weather(lat, lon){
-    var apikey = "";	// TODO get key
-    var api_url = "//api.openweathermap.org";
-    var api_request = api_url;
 
-    api_request +=  "/data/2.5/weather?lat=";
-    //document.write(api_request);
+	//if the function does not work, maybe the get_json.php should be in root, or path should be js/get_json.php
 
+    var api_url = "js/get_json.php?";
+    var type = "type=weather"
+
+	api_request = api_url;
+    api_request += type;
+    api_request += "&lat="
     api_request += lat;
     api_request += "&lon="
     api_request += lon;
-    api_request += "&APPID="
-    api_request += apikey;
-
 
     //document.write(api_request);
 
