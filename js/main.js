@@ -126,7 +126,7 @@ function get_my_location(){
       options);
     } 
 	//return pos;
-	var location = pos.lat + pos.lng;
+	var location = pos.lat + " " + pos.lng;
 	alert(location);
 }
 
