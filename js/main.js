@@ -132,7 +132,7 @@ function get_weather(lat, lon){
 
 	//if the function does not work, maybe the get_json.php should be in root, or path should be js/get_json.php
 
-    var api_url = "js/get_json.php?";
+    var api_url = "get_json.php?";
     var type = "type=weather"
 
 	api_request = api_url;
