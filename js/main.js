@@ -23,7 +23,7 @@ $(document).ready(function() {
 function street_to_geo(street){
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
-      var uri = "http://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
+      var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
       //alert(uri);
       //makes the the jquery call and gets json back 
       $.getJSON(uri, function(data) {
