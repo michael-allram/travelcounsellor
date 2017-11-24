@@ -121,13 +121,15 @@ function get_my_location(){
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+	      
+	      //return pos;
+		var location = pos.lat + " " + pos.lng;
+		alert(location);
       }, 
       function(err){},
       options);
     } 
-	//return pos;
-	var location = pos.lat + " " + pos.lng;
-	alert(location);
+	
 }
 
 function get_weather(lat, lon){
