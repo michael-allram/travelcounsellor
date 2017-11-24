@@ -126,7 +126,8 @@ function get_my_location(){
       options);
     } 
 	//return pos;
-	alert(pos.lat);
+	var location = pos.lat + pos.lng;
+	alert(location);
 }
 
 function get_weather(lat, lon){
