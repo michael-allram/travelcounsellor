@@ -70,7 +70,7 @@ body {
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	background-image: url('../img/loader.gif');
 }
