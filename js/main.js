@@ -90,7 +90,9 @@ function get_places(lat, long, category) {
 		var jsObj = null;
 
 		if (status == 200) {
+			alert("status 200");
 			jsObj = data.results;
+			alert(jsObj);
 			add_details(jsObj, lat, long);
 			sort_json(jsObj, 'rating_over_distance', false);	// false because we want descending order
 			alert(jsObj[0].short_name);
