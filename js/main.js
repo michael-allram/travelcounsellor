@@ -8,6 +8,8 @@
 
 $(document).ready(function() {
 	
+	//stop loader.gif and overlay
+	stop_loader();
 	
 	//enable typewatch
 	$('#street').typeWatch({
@@ -22,9 +24,12 @@ $(document).ready(function() {
 });
 
 
+function start_loader(){
+	$('#loader').fadeIn('slow');	
+	$('#overlay').fadeIn('slow');
+}
 
-
-stop_loader(){
+function stop_loader(){
 	$('#loader').fadeOut('slow');	
 	$('#overlay').fadeOut('slow');
 	
