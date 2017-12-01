@@ -20,6 +20,15 @@ $(document).ready(function() {
 });
 
 
+start_loader(){
+	$('#loader').fadeIn('slow');	
+}
+
+stop_loader(){
+	$('#loader').fadeOut('slow');	
+	
+}
+
 function street_to_geo(street){
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
