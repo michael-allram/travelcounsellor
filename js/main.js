@@ -144,6 +144,8 @@ function get_my_location(){
 		var location = pos.lat + " " + pos.lng;
 	      	stop_loader();
 		alert(location);
+	        get_places(pos.lat,pos.lng,'bank');
+	      
       }, 
       function(err){
 	      stop_loader(); alert("could not get device position");
