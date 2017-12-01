@@ -144,8 +144,8 @@ function get_my_location(){
 	      
 	      //return pos;
 		var location = pos.lat + " " + pos.lng;
-	      	stop_loader();
-		alert(location);
+	      	//stop_loader();
+		//alert(location);
 	        get_places(pos.lat,pos.lng,'bank');
 	      
       }, 
