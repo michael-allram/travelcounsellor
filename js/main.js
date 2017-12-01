@@ -67,6 +67,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 }
 
 function get_places(lat, long, category) {
+	alert("get_places started");
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 	var method = "POST";
 	var postData = "";	// TODO get key
