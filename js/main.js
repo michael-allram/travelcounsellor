@@ -67,7 +67,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 }
 
 function get_places(lat, long, category) {
-	alert("get_places started");
+	//alert("get_places started");
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 	var method = "POST";
 	var postData = "key=AIzaSyAjD6F_48FMF8Qw9E85aQn_1rXFaIwEqv8";	// TODO get key
@@ -92,10 +92,10 @@ function get_places(lat, long, category) {
 		if (status == 200) {
 			alert("status 200");
 			jsObj = data.results;
-			alert(jsObj);
+			//alert(jsObj);
 			add_details(jsObj, lat, long);
 			sort_json(jsObj, 'rating_over_distance', false);	// false because we want descending order
-			alert(jsObj[0].short_name);
+			//alert(jsObj[0].short_name);
 		}
 
 		// TODO: call whatever needs to use the jsObj
