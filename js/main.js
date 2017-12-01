@@ -67,13 +67,13 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 }
 
 function get_places(lat, long, category) {
-	//alert("get_places started");
+	alert("get_places started");
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-	var method = "GET";
-	var postData = "?key=AIzaSyAjD6F_48FMF8Qw9E85aQn_1rXFaIwEqv8";	// TODO get key
-	postData += "&location=" + lat + "," + long;
-	postData += "&radius=5000";	// 5km, could be changed or added as a configurable later
-	postData += "&type=" + category;
+	var method = "POST";
+	var postData = "key=AIzaSyAjD6F_48FMF8Qw9E85aQn_1rXFaIwEqv8";	// TODO get key
+	postData += "location=" + lat + "," + long;
+	postData += "radius=5000";	// 5km, could be changed or added as a configurable later
+	postData += "type=" + category;
 
 	// if it is not true, it'll block ALL execution waiting for server response.
 	var shouldBeAsync = true;
@@ -148,7 +148,7 @@ function get_my_location(){
 		var location = pos.lat + " " + pos.lng;
 	      	//stop_loader();
 		//alert(location);
-	        get_places(pos.lat,pos.lng,'bank');
+	        get_places(-33.8670522,151.1957362,'restaurant');
 	      
       }, 
       function(err){
