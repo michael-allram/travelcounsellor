@@ -127,6 +127,7 @@ function sort_json(json_object, key_to_sort_by, ascending) {
 //returns a Coordinate, could add some other functionality of what to do when geolocation is not supported
 var pos;
 function get_my_location(){
+	start_loader();
 	var options = {
 	  enableHighAccuracy: true
 	};
@@ -139,9 +140,10 @@ function get_my_location(){
 	      
 	      //return pos;
 		var location = pos.lat + " " + pos.lng;
+	      	stop_loader();
 		alert(location);
       }, 
-      function(err){},
+      function(err){stop_loader();},
       options);
     } 
 	
