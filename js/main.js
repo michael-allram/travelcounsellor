@@ -8,6 +8,10 @@
 
 $(document).ready(function() {
 
+	//finish loader.gif
+	stop_loader();
+	
+	//enable typewatch
 	$('#street').typeWatch({
 		captureLength: 2,
 		wait: 1750,
