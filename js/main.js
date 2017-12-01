@@ -22,10 +22,7 @@ $(document).ready(function() {
 });
 
 
-start_loader(){
-	$('#loader').fadeIn('slow');
-	$('#overlay').fadeIn('slow');
-}
+
 
 stop_loader(){
 	$('#loader').fadeOut('slow');	
