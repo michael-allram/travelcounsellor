@@ -7,9 +7,7 @@
 // captureLength: Minimum # of characters necessary to fire the callback
 
 $(document).ready(function() {
-
-	//finish loader.gif
-	stop_loader();
+	
 	
 	//enable typewatch
 	$('#street').typeWatch({
