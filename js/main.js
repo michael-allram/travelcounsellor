@@ -86,11 +86,11 @@ function get_places(lat, long, category) {
 		// You can get all kinds of information about the HTTP response.
 		var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
 		var data = request.responseText; // Returned data, e.g., an HTML document.
-		alert(status);
+		//alert(status);
 		var jsObj = null;
 
 		if (status == 200) {
-			alert("status 200");
+			//alert("status 200");
 			jsObj = data.results;
 			//alert(jsObj);
 			add_details(jsObj, lat, long);
@@ -99,6 +99,7 @@ function get_places(lat, long, category) {
 		}
 
 		// TODO: call whatever needs to use the jsObj
+		alert("finished loading");
 	}
 
 	request.open(method, url, shouldBeAsync);
