@@ -143,7 +143,9 @@ function get_my_location(){
 	      	stop_loader();
 		alert(location);
       }, 
-      function(err){stop_loader();},
+      function(err){
+	      stop_loader(); alert("could not get device position");
+      		},
       options);
     } 
 	
