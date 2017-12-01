@@ -86,7 +86,7 @@ function get_places(lat, long, category) {
 		// You can get all kinds of information about the HTTP response.
 		var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
 		var data = request.responseText; // Returned data, e.g., an HTML document.
-
+		alert(status);
 		var jsObj = null;
 
 		if (status == 200) {
