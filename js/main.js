@@ -36,6 +36,7 @@ function stop_loader(){
 }
 
 function street_to_geo(street){
+      start_loader();
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
@@ -44,6 +45,7 @@ function street_to_geo(street){
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
+	stop_loader();
         alert(obj.latitude + " " + obj.longitude);
         //return obj; 
       });
