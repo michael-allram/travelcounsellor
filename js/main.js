@@ -92,6 +92,7 @@ function get_places(lat, long, category) {
 			jsObj = data.results;
 			add_details(jsObj, lat, long);
 			sort_json(jsObj, 'rating_over_distance', false);	// false because we want descending order
+			alert(jsObj[0].short_name);
 		}
 
 		// TODO: call whatever needs to use the jsObj
