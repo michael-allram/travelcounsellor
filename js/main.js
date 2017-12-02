@@ -73,9 +73,6 @@ function get_places(lat, long, category){
 }
 
 
-	
-}
-
 function get_places2(lat, long, category) {
 	//alert("get_places started");
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
