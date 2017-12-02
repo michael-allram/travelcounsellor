@@ -9,8 +9,8 @@ $type = $_GET['type'];
 $json=file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $latitude . ','  . $longitude .'&radius=' . $radius . '&type=' . $type . '&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E');
 
 $data =  json_decode($json);
-foreach($data->results){
-echo $data->results[0]->rating;
+foreach($data->results as $places){
+echo $places[0]->rating;
 }
 
 
