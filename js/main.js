@@ -11,8 +11,7 @@ $(document).ready(function() {
 	//stop loader.gif and overlay
 	stop_loader();
 	
-	// Needed for Google Places
-	google.maps.event.addDomListener(window, 'load', initialize);
+	
 	
 	//enable typewatch
 	$('#street').typeWatch({
@@ -70,7 +69,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 }
 
 function get_places(lat, long, category){
-	
+	alert("function get_places fired");
 	function initialize() {
   	var pyrmont = new google.maps.LatLng(-33.8665, 151.1956);
 
@@ -92,6 +91,7 @@ function get_places(lat, long, category){
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, function(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+	alert("status ok");
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
         // If the request succeeds, draw the place location on
@@ -107,7 +107,8 @@ function get_places(lat, long, category){
 }
 
 
-	
+	// Needed for Google Places
+	google.maps.event.addDomListener(window, 'load', initialize);	
 }
 
 function get_places2(lat, long, category) {
