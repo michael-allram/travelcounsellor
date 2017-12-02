@@ -68,29 +68,22 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 
 function get_places(lat, long, category){
 	
-	var uri = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-	//uri += "location=" + lat + "," + long;
-	//uri += "&category=" + category;
-	//uri += "&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E";
-	//alert(uri);
-	
-	$.ajax({
-            url: uri, 
-            type: "GET",   
-            dataType: 'jsonp',
-            cache: false,
-	    jsonpCallback: 'callback',
-	    data:  {
-     		location: '33.787794,-117.853111',
-     		radius: 1000,
-     		name: 'coffee',
-     		key: 'AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E', // add your key here
-     		sensor: 'false'
-    	    },
-            success: function(response){                          
-                alert(response);                   
-            }           
-        });    
+	var pyrmont = {lat: -33.867, lng: 151.195};
+	var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            alert(results[i]);
+          }
+        }
+      }
 	
 }
 
