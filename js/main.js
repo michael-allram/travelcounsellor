@@ -72,7 +72,7 @@ function get_places(lat, long, category){
 	uri += "location=" + lat + "," + long;
 	uri += "&category=" + category;
 	uri += "&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E";
-	alert(uri);
+	//alert(uri);
 	
 	$.getJSON(uri, function(data) {
         //var obj = {latitude: data[0].lat, longitude: data[0].lon};
