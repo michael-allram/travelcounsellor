@@ -75,9 +75,9 @@ function get_places(lat, long, category){
 	alert(uri);
 	
 	$.getJSON(uri, function(data) {
-        var obj = {latitude: data[0].lat, longitude: data[0].lon};
+        //var obj = {latitude: data[0].lat, longitude: data[0].lon};
 	alert("success");
-        alert(obj.latitude + " " + obj.longitude);
+        //alert(obj.latitude + " " + obj.longitude);
         //return obj; 
       });
 	
