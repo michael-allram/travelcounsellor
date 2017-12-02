@@ -69,7 +69,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 function get_places(lat, long, category){
 	
 	var pyrmont = {lat: -33.867, lng: 151.195};
-	var service = new google.maps.places.PlacesService(map);
+	var service = new google.maps.places.PlacesService($attrib[0]);
         service.nearbySearch({
           location: pyrmont,
           radius: 500,
