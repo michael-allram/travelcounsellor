@@ -11,7 +11,7 @@ $json=file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch
 $data =  json_decode($json);
 
 for($i=0;$i<20;$i++){
-  echo $data->results[0]->rating;
+  echo $data->results[$i]->rating;
     
 }
 
