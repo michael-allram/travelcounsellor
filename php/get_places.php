@@ -8,7 +8,7 @@ curl_setopt($ch, CURLOPT_URL, 'https://maps.googleapis.com/maps/api/place/nearby
 $result = curl_exec($ch);
 
 $data =  json_decode($result);
-echo $data.results.rating;
+//echo $data.results.rating;
 
 
 ?>
