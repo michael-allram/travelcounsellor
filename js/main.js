@@ -68,10 +68,10 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 
 function get_places(lat, long, category){
 	
-	var uri = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-	uri += "location=" + lat + "," + long;
-	uri += "&category=" + category;
-	uri += "&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E";
+	var uri = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+	//uri += "location=" + lat + "," + long;
+	//uri += "&category=" + category;
+	//uri += "&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E";
 	//alert(uri);
 	
 	$.ajax({
@@ -79,6 +79,13 @@ function get_places(lat, long, category){
             type: "GET",   
             dataType: 'jsonp',
             cache: false,
+	    data:  {
+     		location: '33.787794,-117.853111',
+     		radius: 1000,
+     		name: 'coffee',
+     		key: 'AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E', // add your key here
+     		sensor: 'false'
+    	    },
             success: function(response){                          
                 alert(response);                   
             }           
