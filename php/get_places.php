@@ -1,6 +1,6 @@
 <?php
-$latitude = "10.0";
-$longitude = "20.0";
+$latitude = "-33.867000";
+$longitude = "151.1957";
 $radius = 
 $type = 
 $ch = curl_init();
