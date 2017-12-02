@@ -9,7 +9,7 @@ $type = $_GET['type'];
 $json=file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $latitude . ','  . $longitude .'&radius=' . $radius . '&type=' . $type . '&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E');
 
 $data =  json_decode($json);
-echo $data->results->rating;
+echo $data->results[0]->rating;
 
 
 ?>
