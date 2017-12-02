@@ -79,6 +79,7 @@ function get_places(lat, long, category){
             type: "GET",   
             dataType: 'jsonp',
             cache: false,
+	    jsonpCallback: 'callback',
 	    data:  {
      		location: '33.787794,-117.853111',
      		radius: 1000,
