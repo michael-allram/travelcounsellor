@@ -75,7 +75,7 @@ function get_places(lat, long, category){
           radius: 500,
           type: ['store']
         }, callback);
-      }
+      
 
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
