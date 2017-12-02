@@ -89,6 +89,7 @@ function get_places(lat, long, category){
   // Create the PlaceService and send the request.
   // Handle the callback with an anonymous function.
   var service = new google.maps.places.PlacesService(map);
+		alert("before ok");
   service.nearbySearch(request, function(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
 	alert("status ok");
