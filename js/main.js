@@ -66,7 +66,24 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(lat, long, category) {
+function get_places(lat, long, category){
+	
+	var uri = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+	uri += "location=" + lat + "," + long;
+	uri += "&category=" + category;
+	uri += "&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E";
+	alert(uri);
+	
+	$.getJSON(uri, function(data) {
+        var obj = {latitude: data[0].lat, longitude: data[0].lon};
+	alert("success");
+        alert(obj.latitude + " " + obj.longitude);
+        //return obj; 
+      });
+	
+}
+
+function get_places2(lat, long, category) {
 	//alert("get_places started");
 	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 	var method = "POST";
