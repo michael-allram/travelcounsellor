@@ -11,6 +11,9 @@ $(document).ready(function() {
 	//stop loader.gif and overlay
 	stop_loader();
 	
+	// Needed for Google Places
+	google.maps.event.addDomListener(window, 'load', initialize);
+	
 	//enable typewatch
 	$('#street').typeWatch({
 		captureLength: 2,
@@ -103,8 +106,7 @@ function get_places(lat, long, category){
   });
 }
 
-// Run the initialize function when the window has finished loading.
-google.maps.event.addDomListener(window, 'load', initialize);
+
 	
 }
 
