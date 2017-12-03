@@ -36,9 +36,8 @@ for($i=0;$i<20;$i++){
   echo "<tr onClick=\"showDetails('$placeid')\">";
   echo "<td>" . $data->results[$i]->name . "</td>";
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
-  echo "<td>" . $data->results[$i]->open_now . "</td>";
+  echo "<td>" . $data->results[$i]->opening_hours->open_now . "</td>";
   echo "<td>" . $data->results[$i]->rating . "</td>";
-  echo "<td>" . $data->results[$i]->place_id . "</td>";
   echo "<td>" . round(distance($latitude,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K")*1000) . "</td>";
   echo "</tr>";
 }
