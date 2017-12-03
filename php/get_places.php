@@ -6,7 +6,7 @@ $type = $_GET['type'];
 
 //function to calculate distance
 function distance($lat1, $lon1, $lat2, $lon2, $unit) {
-
+  if($lat1 == NULL || $lat2 == NULL || $lon1 == NULL || $lon2 == NULL) {return "";}
   $theta = $lon1 - $lon2;
   $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
   $dist = acos($dist);
