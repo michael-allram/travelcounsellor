@@ -13,12 +13,12 @@ $data =  json_decode($json);
 //make table with content
 echo "<table>";
 for($i=0;$i<20;$i++){
-  
+  echo "<tr>";
   echo "<td>" . $data->results[$i]->name . "</td>";
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
   echo "<td>" . $data->results[$i]->open_now . "</td>";
   echo "<td>" . $data->results[$i]->rating . "</td>";
-    
+  echo "</tr>";
 }
 echo "</table>";
 
