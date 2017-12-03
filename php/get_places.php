@@ -3,17 +3,24 @@ $latitude = $_GET['lat'];
 $longitude = $_GET['long'];
 $radius = $_GET['radius'];
 $type = $_GET['type'];
-//$ch = curl_init();
-//curl_setopt($ch, CURLOPT_URL, 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $latitude . ','  . $longitude .'&radius=' . $radius . '&type=' . $type . '&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E');
-//$result = curl_exec($ch);
+
+//perform request
 $json=file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $latitude . ','  . $longitude .'&radius=' . $radius . '&type=' . $type . '&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E');
 
+//decode json
 $data =  json_decode($json);
 
+//make table with content
+echo "<table>";
 for($i=0;$i<20;$i++){
-  echo $data->results[$i]->rating;
+  
+  echo "<td>" . $data->results[$i]->name . "</td>";
+  echo "<td>" . $data->results[$i]->vicinity . "</td>";
+  echo "<td>" . $data->results[$i]->open_now . "</td>";
+  echo "<td>" . $data->results[$i]->rating . "</td>";
     
 }
+echo "</table>";
 
 
 
