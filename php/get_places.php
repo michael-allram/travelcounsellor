@@ -37,6 +37,11 @@ for($i=0;$i<20;$i++){
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
   echo "<td>" . $data->results[$i]->open_now . "</td>";
   echo "<td>" . $data->results[$i]->rating . "</td>";
+  echo "<td>" . $data->results[$i]->geometry->location->lat . "</td>";
+  echo "<td>" . $data->results[$i]->geometry->location->lng . "</td>";
+  echo "<td>" . $latutide . "</td>";
+  echo "<td>" . $longitude . "</td>";
+  
   echo "<td>" . distance($latutide,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K") . "</td>";
   echo "</tr>";
 }
