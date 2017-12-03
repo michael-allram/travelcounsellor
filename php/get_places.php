@@ -37,7 +37,7 @@ for($i=0;$i<20;$i++){
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
   echo "<td>" . $data->results[$i]->open_now . "</td>";
   echo "<td>" . $data->results[$i]->rating . "</td>";
-  echo "<td>" . distance($latitude,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K")/1000 . "</td>";
+  echo "<td>" . round(distance($latitude,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K")*1000) . "</td>";
   echo "</tr>";
 }
 echo "</table>";
