@@ -33,7 +33,7 @@ $data =  json_decode($json);
 echo "<table>";
 for($i=0;$i<20;$i++){
   $placeid = $data->results[$i]->placeid;
-  echo "<tr onClick=\"showDetails('$placeid')\">";
+  echo "<tr onClick=\"showDetails('$place_id')\">";
   echo "<td>" . $data->results[$i]->name . "</td>";
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
   echo "<td>" . $data->results[$i]->open_now . "</td>";
