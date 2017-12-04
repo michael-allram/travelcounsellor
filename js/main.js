@@ -68,11 +68,12 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(lat, long, category){
+function get_places(lat, long){
+	var category = $('#category').val();
 	$.ajax({
   		method: "GET",
   		url: "/php/get_places.php",
-  		data: { lat: "47.3449529", long: "11.7084253", radius: "1000", type: "food" }
+  		data: { lat: lat, long: long, radius: "1000", type: category }
 	})
   	.done(function( msg ) {
 		alert("finished");
@@ -165,7 +166,7 @@ function get_my_location(){
 		var location = pos.lat + " " + pos.lng;
 	      	//stop_loader();
 		//alert(location);
-	        get_places(-33.8670522,151.1957362,'restaurant');
+	        get_places(pos.lat,pos.lng);
 	      
       }, 
       function(err){
