@@ -52,8 +52,8 @@ function geo_to_street(lat,long){
       });
 }
 
-function street_to_geo(street){
-      alert("street to geo fired");
+function street_to_geo(){
+      
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
@@ -62,9 +62,10 @@ function street_to_geo(street){
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
-	return obj;
+	//return obj;
 	//stop_loader();
-        alert(obj.latitude + " " + obj.longitude);
+        //alert(obj.latitude + " " + obj.longitude);
+	get_places(obj.latitude, obj.longitude);
 	//get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
@@ -85,16 +86,9 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(){
+function get_places(lat, long){
 	var category = $('#category').val();
-	var obj = {};
-	obj = street_to_geo('schwaz');
-	alert(obj);
-	alert(obj.latitude);
-	var lat = obj.latitude;
-	var long = obj.longitude;
-	alert(lat);
-	alert(long);
+
 	
 	$.ajax({
   		method: "GET",
