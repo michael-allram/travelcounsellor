@@ -6,6 +6,8 @@
 // allowSubmit: Allows a non-multiline element to be submitted (enter key) regardless of captureLength
 // captureLength: Minimum # of characters necessary to fire the callback
 
+var cache_pos = "";
+
 $(document).ready(function() {
 	
 	//stop loader.gif and overlay
@@ -37,8 +39,19 @@ function stop_loader(){
 	
 }
 
+
+function geo_to_street(lat,long){
+	var uri = "http://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + long + "&zoom=18&addressdetails=1";
+	 $.getJSON(uri, function(data) {
+        
+        	var obj = {road: data[0].address.road, village: data[0].address.village};
+		alert(obj.road);
+	
+      });
+}
+
 function street_to_geo(street){
-      start_loader();
+      
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
@@ -49,7 +62,7 @@ function street_to_geo(street){
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
 	//stop_loader();
         //alert(obj.latitude + " " + obj.longitude);
-	get_places(obj.latitude, obj.longitude);
+	//get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
 }
@@ -166,9 +179,10 @@ function get_my_location(){
 	      //return pos;
 	      	$('#street').val("");
 		var location = pos.lat + " " + pos.lng;
+	      	geo_to_street(pos.lat,pos.long);
 	      	//stop_loader();
 		//alert(location);
-	        get_places(pos.lat,pos.lng);
+	        //get_places(pos.lat,pos.lng);
 	      
       }, 
       function(err){
