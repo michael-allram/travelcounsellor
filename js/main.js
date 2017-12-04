@@ -46,7 +46,8 @@ function geo_to_street(lat,long){
         
         	var obj = {road: data.address.road, village: data.address.village, house_number: data.address.house_number, country: data.address.country };
 		var string = obj.road + " " + obj.house_number + " " + obj.village + " " + obj.country;
-		 alert(string);
+		$('#street').val(string);
+		 stop_loader();
 	
       });
 }
