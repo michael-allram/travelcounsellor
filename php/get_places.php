@@ -31,15 +31,15 @@ $data =  json_decode($json);
 
 //make table with content
 echo "<table>";
-echo "<th><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td>
+echo "<th><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td>";
 for($i=0;$i<20;$i++){
   $placeid = $data->results[$i]->place_id;
   echo "<tr onClick=\"showDetails('$placeid')\">";
   echo "<td>" . $data->results[$i]->name . "</td>";
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
-  echo "<td>" . $data->results[$i]->opening_hours->open_now . "</td>";
   echo "<td>" . $data->results[$i]->rating . "</td>";
   echo "<td>" . round(distance($latitude,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K")*1000) . "</td>";
+  echo "<td>" . $data->results[$i]->opening_hours->open_now . "</td>";
   echo "</tr>";
 }
 echo "</table>";
