@@ -6,7 +6,6 @@
 // allowSubmit: Allows a non-multiline element to be submitted (enter key) regardless of captureLength
 // captureLength: Minimum # of characters necessary to fire the callback
 
-var cache_pos = "";
 
 $(document).ready(function() {
 	
@@ -55,8 +54,7 @@ function geo_to_street(lat,long){
 function street_to_geo(){
       start_loader();
       var street = $('#street').val();
-	alert(street);
-      if(street == "") {alert("please enter your starting position!"); exit;}
+      if(street == "") {alert("please enter your starting position!"); return;}
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
