@@ -36,7 +36,7 @@ echo "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is ope
  
 for($i=0;$i<20;$i++){
   $placeid = $data->results[$i]->place_id;
-  if($placeid == "") {echo "<td>No Place Found</td>"; exit;}
+  if($placeid == "") {continue;}
   echo "<tr onClick=\"showDetails('$placeid')\">";
   echo "<td>" . $data->results[$i]->name . "</td>";
   echo "<td>" . $data->results[$i]->vicinity . "</td>";
