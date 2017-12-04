@@ -47,8 +47,9 @@ function street_to_geo(street){
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
-	stop_loader();
-        alert(obj.latitude + " " + obj.longitude);
+	//stop_loader();
+        //alert(obj.latitude + " " + obj.longitude);
+	get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
 }
