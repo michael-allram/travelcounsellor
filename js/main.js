@@ -164,7 +164,7 @@ function get_my_location(){
         };
 	      
 	      //return pos;
-	      	$('#street').html("");
+	      	$('#street').val("");
 		var location = pos.lat + " " + pos.lng;
 	      	//stop_loader();
 		//alert(location);
