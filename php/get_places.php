@@ -31,7 +31,7 @@ $data =  json_decode($json);
 
 //make table with content
 echo "<table>";
-echo "<th><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td>";
+echo "<th><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></th>";
 for($i=0;$i<20;$i++){
   $placeid = $data->results[$i]->place_id;
   echo "<tr onClick=\"showDetails('$placeid')\">";
