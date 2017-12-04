@@ -77,7 +77,7 @@ function get_places(lat, long){
   		data: { lat: lat, long: long, radius: "1000", type: category }
 	})
   	.done(function( msg ) {
-		alert("finished");
+		//alert("finished");
     		$('#main-area').html(msg);
 		stop_loader();
   	});
@@ -164,6 +164,7 @@ function get_my_location(){
         };
 	      
 	      //return pos;
+	      	$('#street').html("");
 		var location = pos.lat + " " + pos.lng;
 	      	//stop_loader();
 		//alert(location);
