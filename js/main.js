@@ -16,15 +16,15 @@ $(document).ready(function() {
 		
 	
 	//enable typewatch
-	$('#street').typeWatch({
-		captureLength: 2,
-		wait: 1750,
-    		highlight: true,
-		callback: function(value) {
-			//alert("typing finished");
-			street_to_geo(value);
-		}
-	});
+	//$('#street').typeWatch({
+	//	captureLength: 2,
+	//	wait: 1750,
+    	//	highlight: true,
+	//	callback: function(value) {
+	//		//alert("typing finished");
+	//		street_to_geo(value);
+	//	}
+	//});
 });
 
 
@@ -62,6 +62,7 @@ function street_to_geo(street){
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
+	return obj;
 	//stop_loader();
         //alert(obj.latitude + " " + obj.longitude);
 	//get_places(obj.latitude, obj.longitude);
@@ -84,8 +85,14 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(lat, long){
+function get_places(){
 	var category = $('#category').val();
+	var obj = street_to_geo($.('#street').val());
+	var lat = obj.latitude;
+	var long = obj.longitude;
+	alert(lat);
+	alert(long);
+	
 	$.ajax({
   		method: "GET",
   		url: "/php/get_places.php",
