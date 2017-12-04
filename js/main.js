@@ -55,6 +55,7 @@ function geo_to_street(lat,long){
 function street_to_geo(){
       start_loader();
       var street = $('#street').val();
+      if(street == "") {alert("please enter your starting position!"); exit;}
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
