@@ -44,7 +44,7 @@ function geo_to_street(lat,long){
 	var uri = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + long + "&zoom=18&addressdetails=1";
 	 $.getJSON(uri, function(data) {
         
-        	var obj = {road: data[0].address.road, village: data[0].address.village};
+        	var obj = {road: data.address.road, village: data.address.village};
 		alert(obj.road);
 	
       });
