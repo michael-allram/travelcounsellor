@@ -53,7 +53,7 @@ function geo_to_street(lat,long){
 }
 
 function street_to_geo(street){
-      
+      alert("street to geo fired");
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
