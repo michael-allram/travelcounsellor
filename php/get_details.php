@@ -5,8 +5,8 @@ $json=file_get_contents('https://maps.googleapis.com/maps/api/place/details/json
 //decode json
 $data =  json_decode($json);
 
-echo $data->results[0]->photos[0]->photo_reference;
-echo $data->results[0]->name;
+echo $data->result[0]->photos[0]->photo_reference;
+echo $data->result[0]->name;
 echo "hallo";
 
 
