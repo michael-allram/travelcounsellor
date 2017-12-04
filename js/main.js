@@ -53,6 +53,7 @@ function geo_to_street(lat,long){
 }
 
 function street_to_geo(){
+      start_loader();
       var street = $('#street').val();
       //encodes the street string into url friendly format
       var street_encoded = encodeURIComponent(street);
