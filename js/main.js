@@ -179,7 +179,7 @@ function get_my_location(){
 	      //return pos;
 	      	$('#street').val("");
 		var location = pos.lat + " " + pos.lng;
-	      	geo_to_street(pos.lat,pos.long);
+	      	geo_to_street(pos.lat,pos.lng);
 	      	//stop_loader();
 		//alert(location);
 	        //get_places(pos.lat,pos.lng);
