@@ -7,6 +7,10 @@ $data =  json_decode($json);
 
 echo $data->result->photos[0]->photo_reference;
 echo $data->result->name;
+echo $data->result->formatted_address;
+echo $data->result->formatted_phone_number;
+echo $data->result->geometry->location->lat;
+echo $data->result->geometry->location->lng;
 echo "hallo";
 
 
