@@ -64,7 +64,7 @@ function street_to_geo(street){
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
 	return obj;
 	//stop_loader();
-        //alert(obj.latitude + " " + obj.longitude);
+        alert(obj.latitude + " " + obj.longitude);
 	//get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
