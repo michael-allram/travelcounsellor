@@ -69,7 +69,15 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 }
 
 function get_places(lat, long, category){
-	
+	$.ajax({
+  		method: "GET",
+  		url: "/php/get_places.php",
+  		data: { lat: "47.3449529", long: "11.7084253", radius: "1000", type: "food" }
+	})
+  	.done(function( msg ) {
+		alert("finished");
+    		$('#main-area').html(msg);
+  	});
 }
 
 
