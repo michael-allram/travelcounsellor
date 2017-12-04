@@ -7,6 +7,7 @@ $data =  json_decode($json);
 
 echo $data->results[0]->photos[0]->photo_reference;
 echo $data->results[0]->name;
+echo "hallo";
 
 
 
