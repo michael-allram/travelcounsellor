@@ -31,7 +31,7 @@ $data =  json_decode($json);
 
 //make table with content
 echo "<table>";
-if($data->results[0]->place_id !== "") {
+if($data->results[0]->place_id == "") {
     echo "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></tr>";
   } else {
     echo "<tr><td>No Places Found</td></tr>";
