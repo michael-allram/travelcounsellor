@@ -77,6 +77,7 @@ function get_places(lat, long, category){
   	.done(function( msg ) {
 		alert("finished");
     		$('#main-area').html(msg);
+		stop_loader();
   	});
 }
 
