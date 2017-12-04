@@ -87,7 +87,10 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 
 function get_places(){
 	var category = $('#category').val();
-	var obj = street_to_geo('schwaz');
+	var obj = {};
+	obj = street_to_geo('schwaz');
+	alert(obj);
+	alert(obj.latitude);
 	var lat = obj.latitude;
 	var long = obj.longitude;
 	alert(lat);
