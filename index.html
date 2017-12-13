@@ -17,7 +17,7 @@
         <div id="controll-bar">
             <div class="blocks">
                 <div>Starting Position</div>
-                <div><input type="textfield" id="street"><input type="button" value="get Device Position" onclick="get_my_location()"></div>
+                <div><input type="textfield" id="street"><input class="my-pos-button" type="button" onclick="get_my_location()"></div>
             </div>
             <div class="blocks">
                 <div>What do you search?</div>
@@ -32,21 +32,22 @@
                          <option value="casino">Casino</option>
                          <option value="bakery">Bakery</option>
                     </select>
-                    <input type="button" value="start search" onclick="street_to_geo()">
                 </div>
             </div>
-            <div class="blocks">
-                <div><a href="/maps.html">View my Route</a></div>
-                <div id="counter">0 Objects</div>
-            </div>
-            
+            <a href="/maps.html" class="blocks big-button">View my Route <div id="counter">0 Objects</div></a>
+            <input class="blocks big-button" type="button" value="start search" onclick="street_to_geo()">
         
         </div>
         <div id="main-area">
             
         	<div class="content"></div>
         </div>
-        <div id="footer">&copy; Travelcounsellor 2017</div>
+        <div id="footer">&copy; Travelcounsellor 2017
+          <div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> 
+          from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by 
+          <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </div>
+      
 
 
     </body>

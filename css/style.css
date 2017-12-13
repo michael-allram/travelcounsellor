@@ -56,6 +56,28 @@ body {
 	
 }
 
+.big-button {
+	background-color: #8f9dff;
+	border: none;
+	font-size: 20px;
+	text-decoration: none;
+	color: #041cc5;
+}
+
+.big-button:hover {
+	background-color: #cfd5ff;
+}
+
+.my-pos-button {
+	width: 30px;
+	height: 30px;
+	border: none;
+	margin-left: 10px;
+	background-image: url('../img/gps-fixed-indicator.svg');
+	background-color: transparent;
+	background-size: 100% 100%;
+}
+
 .logo {
 	width: 1200px;
 	font-size: xx-large;
