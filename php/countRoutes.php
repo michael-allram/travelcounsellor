@@ -2,7 +2,8 @@
 
 include 'db_connect.php';
 $cookie_id = $_COOKIE['travelcounsellorid'];
-$sql = "SELECT COUNT(*) as COUNTED FROM my_route WHERE cookie_id = $cookie_id";
+$sql = "SELECT COUNT(*) as COUNTED FROM my_route WHERE cookie_id = '$cookie_id'";
+echo $sql;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
