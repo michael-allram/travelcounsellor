@@ -23,7 +23,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 $cookieId = $_COOKIE['travelcounsellorid'];
 
 $sql = "INSERT INTO my_route (cookie_id, places_id)
-VALUES ($cookieId, $placeId)";
+VALUES ('$cookieId', '$placeId')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
