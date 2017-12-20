@@ -61,7 +61,7 @@ function street_to_geo(){
       var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
       //alert(uri);
       //makes the the jquery call and gets json back 
-      $.getJSON(uri, function(data) {
+      /**$.getJSON(uri, function(data) {
         //make js obj containing lat and long
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
 	//return obj;
@@ -76,6 +76,17 @@ function street_to_geo(){
 	//get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
+      
+      **/
+	$.ajax({
+  		method: "GET",
+  		url: uri,
+	})
+  	.done(function( msg ) {
+		//alert("finished");
+		alert("finished");
+    		alert(obj.latitude);
+  	});
 }
 
 function calc_distance(lat1, lon1, lat2, lon2) {
