@@ -39,7 +39,15 @@ function stop_loader(){
 }
 
 function addMyRoute(id){
-	
+	$.ajax({
+  		method: "GET",
+  		url: "/php/addMyRoute.php",
+  		data: { id: id}
+	})
+  	.done(function( msg ) {
+		//alert("finished");
+    		alert(msg);
+  	});	
 }
 
 function showDetails(id){
