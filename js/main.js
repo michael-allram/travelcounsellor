@@ -63,17 +63,16 @@ function street_to_geo(){
       //makes the the jquery call and gets json back 
       $.getJSON(uri, function(data) {
         //make js obj containing lat and long
-	 alert(data);
+	if(data==""){alert("starting position not found"); stop_loader(); return;}
         var obj = {latitude: data[0].lat, longitude: data[0].lon};
 	//return obj;
 	//stop_loader();
         //alert(obj.latitude + " " + obj.longitude);
-	alert(obj.latitude);
-	if(obj.latitude=="undefined") {
-		alert("could not find the entered place, please check your starting position");}
-	else {
-		get_places(obj.latitude, obj.longitude);
-	}
+	
+	
+	
+	get_places(obj.latitude, obj.longitude);
+	
 	//get_places(obj.latitude, obj.longitude);
         //return obj; 
       });
