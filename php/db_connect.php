@@ -1,5 +1,5 @@
 <?php
-$servername = "mysql.itas.cc";
+$servername = "localhost";
 $username = "admin_tc";
 $password = "Cdq1m6@6";
 $database = "admin_travelcounsellor";
