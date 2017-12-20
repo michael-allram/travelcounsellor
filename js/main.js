@@ -38,6 +38,16 @@ function stop_loader(){
 	
 }
 
+function addMyRoute(id){
+	
+}
+
+function showDetails(id){
+	
+	
+	
+}
+
 
 function geo_to_street(lat,long){
 	var uri = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + long + "&zoom=18&addressdetails=1";
