@@ -44,6 +44,7 @@ function geo_to_street(lat,long){
 	 $.getJSON(uri, function(data) {
         
         	var obj = {road: data.address.road, village: data.address.village, house_number: data.address.house_number, country: data.address.country };
+		 alert(obj.village);
 		var string = obj.road + " " + obj.house_number + " " + obj.village + " " + obj.country;
 		$('#street').val(string);
 		 stop_loader();
