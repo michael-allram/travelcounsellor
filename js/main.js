@@ -43,9 +43,9 @@ function geo_to_street(lat,long){
 	var uri = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + long + "&zoom=18&addressdetails=1";
 	 $.getJSON(uri, function(data) {
         
-        	var obj = {road: data.address.road, village: data.address.village, house_number: data.address.house_number, country: data.address.country };
-		 alert(obj.village);
-		var string = obj.road + " " + obj.house_number + " " + obj.village + " " + obj.country;
+        	var obj = {road: data.address.road, city: data.address.city, house_number: data.address.house_number, country: data.address.country };
+		
+		var string = obj.road + " " + obj.house_number + " " + obj.city + " " + obj.country;
 		$('#street').val(string);
 		 stop_loader();
 	
