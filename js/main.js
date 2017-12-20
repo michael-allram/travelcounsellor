@@ -67,6 +67,7 @@ function street_to_geo(){
 	//return obj;
 	//stop_loader();
         //alert(obj.latitude + " " + obj.longitude);
+	alert(obj.latitude);
 	if(obj.latitude=="undefined") {
 		alert("could not find the entered place, please check your starting position");}
 	else {
