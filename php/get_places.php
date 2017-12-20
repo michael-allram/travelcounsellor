@@ -43,6 +43,7 @@ for($i=0;$i<20;$i++){
   echo "<td>" . $data->results[$i]->rating . "</td>";
   echo "<td>" . round(distance($latitude,$longitude,$data->results[$i]->geometry->location->lat,$data->results[$i]->geometry->location->lng,"K")*1000) . "</td>";
   echo "<td>" . $data->results[$i]->opening_hours->open_now . "</td>";
+  echo "<td onClick=\"addMyRoute('$placeid')\">add</td>";
   echo "</tr>";
 }
 echo "</table>";
