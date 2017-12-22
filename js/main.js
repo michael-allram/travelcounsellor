@@ -8,12 +8,9 @@
 
 
 $(document).ready(function() {
-	
+
 	//stop loader.gif and overlay
 	stop_loader();
-	
-		
-	
 	//enable typewatch
 	//$('#street').typeWatch({
 	//	captureLength: 2,
@@ -28,14 +25,13 @@ $(document).ready(function() {
 
 
 function start_loader(){
-	$('#loader').fadeIn('slow');	
+	$('#loader').fadeIn('slow');
 	$('#overlay').fadeIn('slow');
 }
 
 function stop_loader(){
-	$('#loader').fadeOut('slow');	
+	$('#loader').fadeOut('slow');
 	$('#overlay').fadeOut('slow');
-	
 }
 
 function addMyRoute(id){
@@ -46,56 +42,49 @@ function addMyRoute(id){
 	})
   	.done(function( msg ) {
 		//alert("finished");
-    		alert(msg);
-  	});	
+    	alert(msg);
+  	});
 }
 
 function showDetails(id){
-	
-	
-	
-}
 
+}
 
 function geo_to_street(lat,long){
 	var uri = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + long + "&zoom=18&addressdetails=1";
-	 $.getJSON(uri, function(data) {
-        
-        	var obj = {road: data.address.road, city: data.address.city, house_number: data.address.house_number, country: data.address.country };
-		
+	$.getJSON(uri, function(data) {
+
+        var obj = {road: data.address.road, city: data.address.city, house_number: data.address.house_number, country: data.address.country };
+
 		var string = obj.road + " " + obj.house_number + " " + obj.city + " " + obj.country;
 		$('#street').val(string);
-		 stop_loader();
-	
-      });
+		stop_loader();
+    });
 }
 
 function street_to_geo(){
-      start_loader();
-      var street = $('#street').val();
-      if(street == "") {alert("please enter your starting position!"); stop_loader(); return;}
-      //encodes the street string into url friendly format
-      var street_encoded = encodeURIComponent(street);
-      var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
-      //alert(uri);
-      //makes the the jquery call and gets json back 
-      $.getJSON(uri, function(data) {
-        //make js obj containing lat and long
-	if(data==""){alert("starting position not found"); stop_loader(); return;}
-        var obj = {latitude: data[0].lat, longitude: data[0].lon};
-	//return obj;
-	//stop_loader();
-        //alert(obj.latitude + " " + obj.longitude);
-	
-	
-	
-	get_places(obj.latitude, obj.longitude);
-	
-	//get_places(obj.latitude, obj.longitude);
-        //return obj; 
-      });
-      
-     
+    start_loader();
+    var street = $('#street').val();
+    if(street == "") {alert("please enter your starting position!"); stop_loader(); return;}
+    //encodes the street string into url friendly format
+    var street_encoded = encodeURIComponent(street);
+    var uri = "https://nominatim.openstreetmap.org/search/" + street_encoded + "?format=json";
+    //alert(uri);
+    //makes the the jquery call and gets json back
+    $.getJSON(uri, function(data) {
+	    //make js obj containing lat and long
+		if(data==""){alert("starting position not found"); stop_loader(); return;}
+
+	    var obj = {latitude: data[0].lat, longitude: data[0].lon};
+		//return obj;
+		//stop_loader();
+	        //alert(obj.latitude + " " + obj.longitude);
+
+		get_places(obj.latitude, obj.longitude);
+
+		//get_places(obj.latitude, obj.longitude);
+	        //return obj;
+    });
 }
 
 function calc_distance(lat1, lon1, lat2, lon2) {
@@ -116,7 +105,6 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 function get_places(lat, long){
 	var category = $('#category').val();
 
-	
 	$.ajax({
   		method: "GET",
   		url: "/php/get_places.php",
@@ -128,7 +116,6 @@ function get_places(lat, long){
 		stop_loader();
   	});
 }
-
 
 function get_places2(lat, long, category) {
 	//alert("get_places started");
@@ -158,7 +145,7 @@ function get_places2(lat, long, category) {
 			jsObj = data.results;
 			//alert(jsObj);
 			add_details(jsObj, lat, long);
-			sort_json(jsObj, 'rating_over_distance', false);	// false because we want descending order
+			sort_json(jsObj, 'rating_over_distance', true);
 			//alert(jsObj[0].short_name);
 		}
 
@@ -167,7 +154,6 @@ function get_places2(lat, long, category) {
 	}
 
 	request.open(method, url, shouldBeAsync);
-
 	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 	// Actually sends the request to the server.
@@ -191,7 +177,6 @@ function sort_json(json_object, key_to_sort_by, ascending) {
         	return ((x > y) ? -1 : ((x < y) ? 1 : 0));
         }
     }
-
     json_object.sort(sortByKey);
 }
 
@@ -200,36 +185,32 @@ var pos;
 function get_my_location(){
 	start_loader();
 	var options = {
-	  enableHighAccuracy: true
+	    enableHighAccuracy: true
 	};
 	if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-	      
-	      //return pos;
-	      	$('#street').val("");
-		var location = pos.lat + " " + pos.lng;
-	      	geo_to_street(pos.lat,pos.lng);
-	      	//stop_loader();
-		//alert(location);
-	        //get_places(pos.lat,pos.lng);
-	      
-      }, 
-      function(err){
-	      stop_loader(); alert("could not get device position");
-      		},
-      options);
-    } 
-	
+        navigator.geolocation.getCurrentPosition(function(position) {
+	        pos = {
+	          lat: position.coords.latitude,
+	          lng: position.coords.longitude
+	        };
+
+		    // return pos;
+		    $('#street').val("");
+			var location = pos.lat + " " + pos.lng;
+		    geo_to_street(pos.lat,pos.lng);
+		    //stop_loader();
+			//alert(location);
+		    //get_places(pos.lat,pos.lng);
+        },
+        function(err){
+	        stop_loader(); alert("could not get device position");
+      	},
+        options);
+    }
 }
 
 function get_weather(lat, lon){
-
 	//if the function does not work, maybe the get_json.php should be in root, or path should be js/get_json.php
-
     var api_url = "js/get_json.php?";
     var type = "type=weather"
 
@@ -250,5 +231,4 @@ function get_weather(lat, lon){
                 return(JSON.stringify(data.weather[0].main));
             });
     });
-
 }
