@@ -150,7 +150,7 @@ function json_to_table(json_object) {
 		str += "<td>" + json_object[i].distance + "</td>";
 		if (json_object[i].opening_hours.open_now) {
 			str += "<td>" + true + "</td>";
-		else {
+		} else {
 			str += "<td>" + false + "</td>";
 		}
 		str += "<td onClick=\"addMyRoute('placeid')\">add</td>";
