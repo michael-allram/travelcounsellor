@@ -140,7 +140,7 @@ function json_to_table(json_object) {
 	var str = "<table>"
 	str += "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></tr>"
 
-	for(i=0; i<20; i++) {
+	for(i in json_object) {
 		var placeid = json_object[i].place_id;
 		if(placeid == "") {break;}
 		str += "<tr onClick=\"showDetails('placeid')\">";
@@ -148,7 +148,11 @@ function json_to_table(json_object) {
 		str += "<td>" + json_object[i].vicinity + "</td>";
 		str += "<td>" + json_object[i].rating + "</td>";
 		str += "<td>" + json_object[i].distance + "</td>";
-		str += "<td>" + json_object[i].opening_hours.open_now + "</td>";
+		if (json_object[i].opening_hours.open_now) {
+			str += "<td>" + true + "</td>";
+		else {
+			str += "<td>" + false + "</td>";
+		}
 		str += "<td onClick=\"addMyRoute('placeid')\">add</td>";
 		str += "</tr>";
 	}
@@ -157,7 +161,7 @@ function json_to_table(json_object) {
 }
 
 function add_details(json_object, lat, long) {
-	for ( x in json_object) {
+	for (x in json_object) {
 		json_object[x].distance = calc_distance(lat, long, json_object[x].geometry.location.lat, json_object[x].geometry.location.lng);
 		json_object[x].rating_over_distance = json_object[x].rating/json_object[x].distance;
 	}
