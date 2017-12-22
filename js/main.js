@@ -126,6 +126,7 @@ function get_places2(lat, long) {
   		data: { lat: lat, long: long, radius: "1000", type: category }
 	})
   	.done(function( msg ) {
+  		msg = JSON.parse(msg)
 		//alert("finished");
     	//$('#main-area').html(msg);
     	add_details(msg, lat, long)
@@ -139,7 +140,7 @@ function json_to_table(json_object) {
 	var str = "<table>"
 	str += "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></tr>"
 
-	for($i=0;$i<20;$i++){
+	for(i=0; i<20; i++) {
 		var placeid = json_object[i].place_id;
 		if(placeid == "") {break;}
 		str += "<tr onClick=\"showDetails('placeid')\">";
