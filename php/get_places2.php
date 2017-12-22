@@ -26,7 +26,8 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 //perform request
 $json=file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $latitude . ','  . $longitude .'&radius=' . $radius . '&type=' . $type . '&key=AIzaSyBBxg4WQz_rdeQT8_0b8rX9Y_7CEiBOB4E');
 
-echo $json;
+$data =  json_decode($json);
+echo json_encode($data->results);
 /*
 //decode json
 $data =  json_decode($json);
