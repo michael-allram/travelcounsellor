@@ -80,7 +80,7 @@ function street_to_geo(){
 		//stop_loader();
 	        //alert(obj.latitude + " " + obj.longitude);
 
-		get_places(obj.latitude, obj.longitude);
+		get_places2(obj.latitude, obj.longitude);
 
 		//get_places(obj.latitude, obj.longitude);
 	        //return obj;
@@ -102,7 +102,7 @@ function calc_distance(lat1, lon1, lat2, lon2) {
 	return dist;
 }
 
-function get_places(lat, long){
+function get_places(lat, long) {
 	var category = $('#category').val();
 
 	$.ajax({
@@ -112,52 +112,47 @@ function get_places(lat, long){
 	})
   	.done(function( msg ) {
 		//alert("finished");
-    		$('#main-area').html(msg);
+    	$('#main-area').html(msg);
 		stop_loader();
   	});
 }
 
-function get_places2(lat, long, category) {
-	//alert("get_places started");
-	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-	var method = "POST";
-	var postData = "key=AIzaSyAjD6F_48FMF8Qw9E85aQn_1rXFaIwEqv8";	// TODO get key
-	postData += "location=" + lat + "," + long;
-	postData += "radius=5000";	// 5km, could be changed or added as a configurable later
-	postData += "type=" + category;
+function get_places2(lat, long) {
+	var category = $('#category').val();
 
-	// if it is not true, it'll block ALL execution waiting for server response.
-	var shouldBeAsync = true;
+	$.ajax({
+  		method: "GET",
+  		url: "/php/get_places2.php",
+  		data: { lat: lat, long: long, radius: "1000", type: category }
+	})
+  	.done(function( msg ) {
+		//alert("finished");
+    	//$('#main-area').html(msg);
+    	add_details(msg, lat, long)
+    	sort_json(msg, 'rating_over_distance', false);
+    	$('#main-area').html(json_to_table(msg));
+		stop_loader();
+  	});
+}
 
-	var request = new XMLHttpRequest();
+function json_to_table(json_object) {
+	var str = "<table>"
+	str += "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></tr>"
 
-	// This function attached to the XMLHttpRequest "onload" property specifies how the HTTP response will be handled.
-	// request.onreadystatechange can also be used if this doesn't work
-	request.onload = function () {
-		// You can get all kinds of information about the HTTP response.
-		var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-		var data = request.responseText; // Returned data, e.g., an HTML document.
-		//alert(status);
-		var jsObj = null;
-
-		if (status == 200) {
-			//alert("status 200");
-			jsObj = data.results;
-			//alert(jsObj);
-			add_details(jsObj, lat, long);
-			sort_json(jsObj, 'rating_over_distance', true);
-			//alert(jsObj[0].short_name);
-		}
-
-		// TODO: call whatever needs to use the jsObj
-		alert("finished loading");
+	for($i=0;$i<20;$i++){
+		var placeid = json_object[i].place_id;
+		if(placeid == "") {break;}
+		str += "<tr onClick=\"showDetails('placeid')\">";
+		str += "<td>" + json_object[i].name + "</td>";
+		str += "<td>" + json_object[i].vicinity + "</td>";
+		str += "<td>" + json_object[i].rating + "</td>";
+		str += "<td>" + json_object[i].distance + "</td>";
+		str += "<td>" + json_object[i].opening_hours.open_now + "</td>";
+		str += "<td onClick=\"addMyRoute('placeid')\">add</td>";
+		str += "</tr>";
 	}
 
-	request.open(method, url, shouldBeAsync);
-	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-	// Actually sends the request to the server.
-	request.send(postData);
+	return str
 }
 
 function add_details(json_object, lat, long) {
@@ -190,8 +185,8 @@ function get_my_location(){
 	if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
 	        pos = {
-	          lat: position.coords.latitude,
-	          lng: position.coords.longitude
+	            lat: position.coords.latitude,
+	            lng: position.coords.longitude
 	        };
 
 		    // return pos;
