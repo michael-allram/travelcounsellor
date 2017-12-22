@@ -158,7 +158,7 @@ function json_to_table(json_object) {
 
 function add_details(json_object, lat, long) {
 	for ( x in json_object) {
-		json_object[x].distance = calc_distance(lat, lon, json_object[x].geometry.location.lat, json_object[x].geometry.location.lng);
+		json_object[x].distance = calc_distance(lat, long, json_object[x].geometry.location.lat, json_object[x].geometry.location.lng);
 		json_object[x].rating_over_distance = json_object[x].rating/json_object[x].distance;
 	}
 }
