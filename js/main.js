@@ -137,7 +137,7 @@ function get_places2(lat, long) {
 }
 
 function json_to_table(json_object) {
-	var str = "<div class="datatable">";
+	var str = "<div class=\"datatable\">";
 	str += "<div class=\"header row\"><div class=\"name\">Name</div><div class=\"street\">Street</div><div class=\"rating\">Rating</div><div class=\"distance\">Distance</div><div class=\"opened\">is open?</div></div>";
 
 	for(i in json_object) {
