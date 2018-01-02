@@ -137,26 +137,27 @@ function get_places2(lat, long) {
 }
 
 function json_to_table(json_object) {
-	var str = "<table>"
-	str += "<tr><td>Name</td><td>Street</td><td>Rating</td><td>Distance</td><td>is open?</td></tr>"
+	var str = "<div class="datatable">"
+	str += "<div class=\"header row\"><div class=\"name\">Name</div><div class=\"street\">Street</div><div class=\"rating\">Rating</div><div class=\"distance\">Distance</div><div class=\"opened\">is open?</div></div>"
 
 	for(i in json_object) {
 		var placeid = json_object[i].place_id;
 		if(placeid == "") {break;}
-		str += "<tr onClick=\"showDetails('placeid')\">";
-		str += "<td>" + json_object[i].name + "</td>";
-		str += "<td>" + json_object[i].vicinity + "</td>";
-		str += "<td>" + json_object[i].rating + "</td>";
-		str += "<td>" + json_object[i].distance + "</td>";
+		str += "<div class=\"row\"><div class=\"data\" onClick=\"showDetails('placeid')\">";
+		str += "<div class=\"name\">" + json_object[i].name + "</div>";
+		str += "<div class=\"street\">" + json_object[i].vicinity + "</div>";
+		str += "<div class=\"rating\">" + json_object[i].rating + "</div>";
+		str += "<div class=\"distance\">" + json_object[i].distance + "</div>";
 		if (json_object[i].opening_hours) {
 			if (json_object[i].opening_hours.open_now) {
-				str += "<td>" + true + "</td>";
+				str += "<div class=\"opened\">" + true + "</div>";
 			} else {
-				str += "<td>" + false + "</td>";
+				str += "<div class=\"opened\">" + false + "</div>";
 			}
 		}
-		str += "<td onClick=\"addMyRoute('placeid')\">add</td>";
-		str += "</tr>";
+		str +="</div>"
+		str += "<div class=\"add-button\" onClick=\"addMyRoute('placeid')\">add</div>";
+		str += "</div>";
 	}
 
 	return str
