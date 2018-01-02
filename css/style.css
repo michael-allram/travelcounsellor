@@ -56,6 +56,36 @@ body {
 	
 }
 
+.datatable {
+	margin: 10px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.name {
+	width: 35%;	
+}
+
+.street {
+	width: 30%;
+}
+
+.rating {
+	width: 5%;
+}
+
+.distance {
+	width: 7%;
+}
+
+.opened {
+	width: 5%;
+}
+
+
 .big-button {
 	background-color: #8f9dff;
 	border: none;
