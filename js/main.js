@@ -137,8 +137,8 @@ function get_places2(lat, long) {
 }
 
 function json_to_table(json_object) {
-	var str = "<div class="datatable">"
-	str += "<div class=\"header row\"><div class=\"name\">Name</div><div class=\"street\">Street</div><div class=\"rating\">Rating</div><div class=\"distance\">Distance</div><div class=\"opened\">is open?</div></div>"
+	var str = "<div class="datatable">";
+	str += "<div class=\"header row\"><div class=\"name\">Name</div><div class=\"street\">Street</div><div class=\"rating\">Rating</div><div class=\"distance\">Distance</div><div class=\"opened\">is open?</div></div>";
 
 	for(i in json_object) {
 		var placeid = json_object[i].place_id;
@@ -155,12 +155,12 @@ function json_to_table(json_object) {
 				str += "<div class=\"opened\">" + false + "</div>";
 			}
 		}
-		str +="</div>"
+		str +="</div>";
 		str += "<div class=\"add-button\" onClick=\"addMyRoute('placeid')\">add</div>";
 		str += "</div>";
 	}
 
-	return str
+	return str;
 }
 
 function add_details(json_object, lat, long) {
