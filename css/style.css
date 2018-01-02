@@ -85,6 +85,16 @@ body {
 	width: 5%;
 }
 
+.data {
+	width: 94%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header {
+	width: 94%;
+}
+
 
 .big-button {
 	background-color: #8f9dff;
