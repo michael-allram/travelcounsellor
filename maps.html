@@ -92,7 +92,7 @@
   			<li value="muenchen, at">München</li>
   			<li value="Madrid, at">Madrid</li>
   		</ol>
-        <input type="submit" id="submit" value="recalc">
+      <input type="submit" id="submit" value="Recalculate">
       <div id="directions-panel"></div>
     </div>
     <script>
@@ -112,7 +112,7 @@
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var waypts = [];
-		for($i = 1; $i<$(".locations").children().length -1;$i++)
+		    for($i = 1; $i<$(".locations").children().length -1; $i++)
         	waypts.push({location: $(".locations").children()[$i].innerHTML,stopover:true});
         var checkboxArray = document.getElementById('waypoints');
         //for (var i = 0; i < checkboxArray.length; i++) {
