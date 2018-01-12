@@ -52,7 +52,7 @@ body {
 	height: auto;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: white;
+	background-color: #e0e0e0;
 }
 
 .content {
@@ -67,11 +67,11 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 5px;
-	border-top: 2px solid aqua;
+	border-top: 2px solid #0465b2;
 }
 
 .name {
-	width: 35%;	
+	width: 35%;
 }
 
 .street {
@@ -97,7 +97,7 @@ body {
 }
 
 .data:hover {
-	background-color: #ececec;
+	background-color: #f0f0f0;
 }
 
 .table-header {
