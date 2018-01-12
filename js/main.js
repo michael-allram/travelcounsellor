@@ -154,7 +154,9 @@ function json_to_table(json_object) {
 					"<i class=\"fa fa-check\" aria-hidden=\"true\" style=\"color: green;\"></i>" 
 					+ "</div>";
 			} else {
-				str += "<div class=\"opened\">" + false + "</div>";
+				str += "<div class=\"opened\">" +
+					"<i class=\"fa fa-times\" aria-hidden=\"true\"></i>"
+					+ "</div>";
 			}
 		}
 		str +="</div>";
