@@ -5,7 +5,7 @@ html {
 
 body {
 	margin: 0;
-	background-color: #cee0ff;
+	background-color: #e0e0e0;
 }
 
 #header {
@@ -19,6 +19,7 @@ body {
 }
 
 #footer {
+	color: #ffffff;
 	background-color: #505050;
 	width: 100%;
 	height: 40px;
@@ -38,6 +39,7 @@ body {
 #controll-bar {
 	text-align: center;
 	background-image: url("../img/background_strip2.jpg");
+	color: #ffffff;
 	background-color: #8f9dff;
 	display: flex;
 	justify-content: center;
@@ -107,15 +109,15 @@ body {
 
 
 .big-button {
-	background-color: #8f9dff;
+	background-color: #505050;
 	border: none;
 	font-size: 20px;
 	text-decoration: none;
-	color: #041cc5;
+	color: #ffffff;
 }
 
 .big-button:hover {
-	background-color: #cfd5ff;
+	background-color: #656565;
 }
 
 .my-pos-button {
