@@ -150,7 +150,7 @@ function json_to_table(json_object) {
 		str += "<div class=\"distance\">" + json_object[i].distance + "</div>";
 		if (json_object[i].opening_hours) {
 			if (json_object[i].opening_hours.open_now) {
-				str += "<div class=\"opened\">" + true + "</div>";
+				str += "<div class=\"opened\">" + "<i class=\"fa fa-check\" aria-hidden=\"true\"></i>" + "</div>";
 			} else {
 				str += "<div class=\"opened\">" + false + "</div>";
 			}
