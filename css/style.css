@@ -5,7 +5,8 @@ html {
 
 body {
 	margin: 0;
-	background-color: #e0e0e0;
+	background-color: #e0e0ff;
+	background-image: url("../img/background.jpg");
 }
 
 #header {
@@ -38,9 +39,8 @@ body {
 
 #controll-bar {
 	text-align: center;
-	background-image: url("../img/background_strip2.jpg");
 	color: #ffffff;
-	background-color: #8f9dff;
+	background-color: #e0e0e0;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
