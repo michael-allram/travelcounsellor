@@ -160,7 +160,7 @@ function json_to_table(json_object) {
 			}
 		}
 		str +="</div>";
-		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + placeid + "')\">add</div>";
+		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + placeid + "')\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i>add</div>";
 		str += "</div>";
 	}
 
