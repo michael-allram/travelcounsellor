@@ -36,7 +36,8 @@ body {
 }
 
 #controll-bar {
-	text-align: center; 
+	text-align: center;
+	background-image: url("../img/background_strip2.jpg");
 	background-color: #8f9dff;
 	display: flex;
 	justify-content: center;
@@ -53,7 +54,7 @@ body {
 }
 
 .content {
-	
+
 }
 
 .datatable {
