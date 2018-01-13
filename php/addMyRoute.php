@@ -33,7 +33,7 @@ mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', 
 
 
 $sql = "INSERT INTO my_route (cookie_id, places_id, name, street, rating, lat, lng)
-VALUES ('$cookieId', '$placeId', '$name', '$street', $rating, $lat, $lng)";
+VALUES ('$cookieId', '$placeId', '$name', '$street', '$rating', '$lat', '$lng')";
 
 echo $placeId . " ! ! " . $name . " ! ! " . $street . " ! ! " . $rating . " ! ! " . $lat . " ! ! " . $lng . " ! ! " . $cookieId;
 
