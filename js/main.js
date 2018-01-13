@@ -171,7 +171,7 @@ function json_to_table(json_object) {
 		
 		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + 
 			placeid + "','" + name + "','" + street + "'," + rating + "," + lat + "," + lng
-			+ "')\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
+			+ ")\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
 		str += "</div>";
 	}
 
