@@ -13,6 +13,11 @@ function generateRandomString($length = 10) {
 include 'db_connect.php';
 
 $placeId = $_GET['id'];
+$name = $_GET['name'];
+$street = $_GET['street'];
+$rating = $_GET['rating'];
+$lat = $_GET['lat'];
+$lng = $_GET['lng'];
 
 
 if(!isset($_COOKIE['travelcounsellorid'])){
@@ -22,8 +27,8 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 
 $cookieId = $_COOKIE['travelcounsellorid'];
 
-$sql = "INSERT INTO my_route (cookie_id, places_id)
-VALUES ('$cookieId', '$placeId')";
+$sql = "INSERT INTO my_route (cookie_id, places_id, name, street, rating, lat, lng)
+VALUES ('$cookieId', '$placeId', '$name', '$street', $rating, $lat, $lng)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
