@@ -1,4 +1,6 @@
 <?php
+header("Content-Type: text/html; charset=utf-8");
+
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -26,6 +28,9 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 }
 
 $cookieId = $_COOKIE['travelcounsellorid'];
+
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'", $conn);
+
 
 $sql = "INSERT INTO my_route (cookie_id, places_id, name, street, rating, lat, lng)
 VALUES ('$cookieId', '$placeId', '$name', '$street', $rating, $lat, $lng)";
