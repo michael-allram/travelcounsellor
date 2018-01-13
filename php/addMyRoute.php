@@ -13,8 +13,8 @@ function generateRandomString($length = 10) {
 include 'db_connect.php';
 
 $placeId = $_GET['id'];
-$name = $_GET['name'];
-$street = $_GET['street'];
+$name = urldecode($_GET['name']);
+$street = urldecode($_GET['street']);
 $rating = $_GET['rating'];
 $lat = $_GET['lat'];
 $lng = $_GET['lng'];
