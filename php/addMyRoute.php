@@ -30,6 +30,8 @@ $cookieId = $_COOKIE['travelcounsellorid'];
 $sql = "INSERT INTO my_route (cookie_id, places_id, name, street, rating, lat, lng)
 VALUES ('$cookieId', '$placeId', '$name', '$street', $rating, $lat, $lng)";
 
+echo $placeId . " ! ! " . $name . " ! ! " . $street " ! ! " . $rating . " ! ! " . $lat . " ! ! " . $lng . " ! ! " . $cookieId;
+
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
