@@ -58,6 +58,19 @@ body {
 }
 
 #main-area {
+	overflow: scroll;
+	height: 400px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	height: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #e0e0e0;
+}
+
+#myRoute {
+	overflow: scroll;
+	height: 300px;
 	margin-top: 10px;
 	margin-bottom: 40px;
 	height: auto;
