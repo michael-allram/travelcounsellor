@@ -3,7 +3,7 @@ header("Content-Type: text/html; charset=utf-8");
 
 include 'db_connect.php';
 
-
+echo "TEST";
 if(!isset($_COOKIE['travelcounsellorid'])){
   return 0;
 }
