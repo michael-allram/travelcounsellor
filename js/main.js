@@ -34,11 +34,11 @@ function stop_loader(){
 	$('#overlay').fadeOut('slow');
 }
 
-function addMyRoute(id){
+function addMyRoute(id, street, rating,lat,lng){
 	$.ajax({
   		method: "GET",
   		url: "/php/addMyRoute.php",
-  		data: { id: id}
+  		data: { id: id, street: street, rating: rating, lat: lat, lng: lng}
 	})
   	.done(function( msg ) {
 		//alert("finished");
