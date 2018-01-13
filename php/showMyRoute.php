@@ -11,10 +11,10 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 $cookieId = $_COOKIE['travelcounsellorid'];
 
 
-$sql = "SELECT * FROM 'my_route'";
+$sql = "SELECT * FROM my_route";
 echo $sql;
 
-if ($result = $mysqli->query($sql)) {
+if ($result = $conn->query($sql)) {
     echo "<table>";
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
