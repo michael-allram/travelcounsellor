@@ -162,6 +162,7 @@ function json_to_table(json_object) {
 		str +="</div>";
 		var name = encodeURI(json_object[i].name);
 		var street = encodeURI(json_object[i].vicinity);
+		street = street.replace(",","-");
 		var rating = json_object[i].rating;
 		var lat = json_object[i].geometry.location.lat;
 		var lng = json_object[i].geometry.location.lng;
