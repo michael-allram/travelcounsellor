@@ -34,7 +34,7 @@ function stop_loader(){
 	$('#overlay').fadeOut('slow');
 }
 
-function addMyRoute(id, name, street, rating,lat,lng){
+function addMyRoute(id, name, street, rating, lat, lng){
 	$.ajax({
   		method: "GET",
   		url: "/php/addMyRoute.php",
