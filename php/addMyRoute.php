@@ -15,8 +15,8 @@ function generateRandomString($length = 10) {
 include 'db_connect.php';
 
 $placeId = $_GET['id'];
-$name = urldecode($_GET['name']);
-$street = urldecode($_GET['street']);
+$name = utf8_encode(urldecode($_GET['name']));
+$street = utf8_encode(urldecode($_GET['street']));
 $rating = $_GET['rating'];
 $lat = $_GET['lat'];
 $lng = $_GET['lng'];
