@@ -59,7 +59,7 @@ body {
 
 #main-area {
 	overflow: scroll;
-	height: 400px;
+	height: 400px !important;
 	margin-top: 10px;
 	margin-bottom: 40px;
 	height: auto;
