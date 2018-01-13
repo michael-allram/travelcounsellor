@@ -10,6 +10,7 @@
 $(document).ready(function() {
 
 	//stop loader.gif and overlay
+	showMyRoute();
 	stop_loader();
 	//enable typewatch
 	//$('#street').typeWatch({
@@ -46,8 +47,18 @@ function addMyRoute(id, name, street, rating, lat, lng){
   	});
 }
 
-function showDetails(id){
-
+function showMyRoute(){
+	$.ajax({
+  		method: "GET",
+  		url: "/php/showMyRoute.php"
+	})
+  	.done(function( data ) {
+		if(data !== 0) {
+			$('#myRoute').html(data);
+			alert("data loaded");
+		}
+    	
+  	});
 }
 
 function geo_to_street(lat,long){
