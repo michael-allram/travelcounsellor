@@ -1,4 +1,6 @@
 <?php
+header("Content-Type: text/html; charset=utf-8");
+
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
