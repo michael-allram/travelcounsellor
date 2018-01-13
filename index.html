@@ -12,6 +12,33 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" />
+        
+        <!-- COOKIE LAW -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+            window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                "background": "#343c66",
+                "text": "#cfcfe8"
+               },
+                "button": {
+                    "background": "#f71559"
+                }
+                },
+                "theme": "classic",
+                "position": "bottom-left",
+                "content": {
+                "message": "This website uses permanent first-party cookies to give you the best experience. Some features will not work without cookies.",
+                "dismiss": "Accept",
+                "link": "Learn more"
+                }
+                })});
+            </script>
+        <!-- COOKIE LAW END -->
+        
     </head>
 
     <body>
