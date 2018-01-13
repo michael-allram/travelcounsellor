@@ -160,7 +160,17 @@ function json_to_table(json_object) {
 			}
 		}
 		str +="</div>";
-		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + placeid + "')\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
+		var name = encodeURI(json_object[i].name);
+		var street = encodeURI(json_object[i].vicinity);
+		var rating = json_object[i].rating;
+		var lat = json_object[i].geometry.location.lat;
+		var lng = json_object[i].geometry.location.lng;
+		
+		
+		
+		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + 
+			placeid + "," + street + "," + rating + "," + lat + "," + lng
+			+ "')\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
 		str += "</div>";
 	}
 
