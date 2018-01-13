@@ -10,7 +10,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 $cookieId = $_COOKIE['travelcounsellorid'];
 
 
-$sql = "SELECT * FROM my_route";
+$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
 
 
 if ($result = $conn->query($sql)) {
