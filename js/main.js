@@ -34,11 +34,11 @@ function stop_loader(){
 	$('#overlay').fadeOut('slow');
 }
 
-function addMyRoute(id, street, rating,lat,lng){
+function addMyRoute(id, name, street, rating,lat,lng){
 	$.ajax({
   		method: "GET",
   		url: "/php/addMyRoute.php",
-  		data: { id: id, street: street, rating: rating, lat: lat, lng: lng}
+  		data: { id: id, name: name, street: street, rating: rating, lat: lat, lng: lng}
 	})
   	.done(function( msg ) {
 		//alert("finished");
@@ -170,7 +170,7 @@ function json_to_table(json_object) {
 		
 		
 		str += "<div class=\"add-button\" onClick=\"addMyRoute('" + 
-			placeid + "," + street + "," + rating + "," + lat + "," + lng
+			placeid + "," + name + "," + street + "," + rating + "," + lat + "," + lng
 			+ "')\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
 		str += "</div>";
 	}
