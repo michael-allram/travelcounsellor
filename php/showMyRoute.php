@@ -3,7 +3,6 @@ header("Content-Type: text/html; charset=utf-8");
 
 include 'db_connect.php';
 
-echo "TEST";
 if(!isset($_COOKIE['travelcounsellorid'])){
   return 0;
 }
@@ -12,18 +11,20 @@ $cookieId = $_COOKIE['travelcounsellorid'];
 
 
 $sql = "SELECT * FROM my_route";
-echo $sql;
+
 
 if ($result = $conn->query($sql)) {
-    echo "<table>";
+    $output .= "<table>";
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-       echo $row['street'];
+       $output .= "<tr><td>" . $row['street'] . "</td></tr>";
+     
     }
-    echo "</table>";
+    $output .= "</table>";
     /* free result set */
     $result->free();
 }
+echo $output;
 
 
 $conn->close();
