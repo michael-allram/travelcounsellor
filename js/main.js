@@ -185,7 +185,7 @@ function json_to_table(json_object) {
 			+ ")\"><i class=\"fa fa-bookmark-o\" aria-hidden=\"true\"></i> add</div>";
 		str += "</div>";
 	}
-	str += "<div id='myRoute'></div>";
+	
 
 	return str;
 }
