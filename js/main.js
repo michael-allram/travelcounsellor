@@ -38,7 +38,7 @@ function addMyRoute(id, name, street, rating, lat, lng){
 	$.ajax({
   		method: "GET",
   		url: "/php/addMyRoute.php",
-  		data: { id: "id", name: "name", street: "street", rating: rating, lat: lat, lng: lng}
+  		data: { id: id, name: name, street: street, rating: rating, lat: lat, lng: lng}
 	})
   	.done(function( msg ) {
 		//alert("finished");
