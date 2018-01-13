@@ -11,7 +11,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 $cookieId = $_COOKIE['travelcounsellorid'];
 
 
-$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
+$sql = "SELECT * FROM my_route";
 echo $sql;
 
 if ($result = $mysqli->query($sql)) {
