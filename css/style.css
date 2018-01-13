@@ -8,6 +8,7 @@ body {
 	background-color: #e0e0e0;
 	background-image: url("../img/background.jpg");
 	font-family: 'Heebo', sans-serif;
+	overflow: hidden;
 }
 
 #header {
@@ -36,6 +37,14 @@ body {
 	height: 55px;
 	margin: 10px;
 	display: inline-block;
+	margin-top: auto;
+	margin-bottom: auto;
+	
+	@media (max-width: 1430px) {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
 }
 
 #controll-bar {
