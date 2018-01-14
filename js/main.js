@@ -67,12 +67,13 @@ function showMyRoute(){
   		url: "/php/showMyRoute.php"
 	})
   	.done(function( data ) {
-		if(data !== 0 && data !== 1) {
 			$('#myRoute').html(data);
-			
+			if(data !== "no route") {
+				$('#navigation').show();	
+			}
 			//alert("data loaded");
 			
-		} 
+		}
     	
   	});
 }
