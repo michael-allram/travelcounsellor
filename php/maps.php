@@ -20,7 +20,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery-sortable.js" type="text/javascript"></script>
+	<script src="../js/jquery-sortable.js" type="text/javascript"></script>
     <title>Waypoints in directions</title>
     <style>
       #right-panel {
