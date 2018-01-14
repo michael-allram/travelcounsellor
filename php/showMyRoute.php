@@ -4,7 +4,8 @@ header("Content-Type: text/html; charset=utf-8");
 include 'db_connect.php';
 
 if(!isset($_COOKIE['travelcounsellorid'])){
-  return 'no routes';
+  echo "no routes";
+  return 0;
 }
 
 $cookieId = $_COOKIE['travelcounsellorid'];
@@ -17,7 +18,8 @@ if ($result = $conn->query($sql)) {
   
     $row_cnt = $result->num_rows;
     if($row_cnt < 1) {
-      return 'no routes'; 
+      echo "no routes";
+      return 0; 
     }
     //$output .= "<div id='myRouteHeadline'>My Route</div>";
     $output .= "<div class='datatable'>";
