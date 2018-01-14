@@ -26,8 +26,7 @@ if ($result = $conn->query($sql)) {
         $output .= "<div class='street'>Street</div>";
         $output .= "<div class='rating'>Rating</div>";
       $output .= "</div>";
-      $output .= "<div class='row'>";
-        $output .= "<div class='data'>";
+      
           
        
         
@@ -35,10 +34,14 @@ if ($result = $conn->query($sql)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
        //$output .= "<tr class='row'><td>" . $row['name'] . "</td><td>" . $row['street']  . "</td><td>" . $row['rating']  . "</td><td onClick='delMyRoute(" . $row['id'] . ")'>DEL</td></tr>";
-          $output .= "<div class='name'>" . $row['name'] . "</div>";
-          $output .= "<div class='street'>" . $row['street'] . "</div>";
-          $output .= "<div class='rating'>" . $row['rating'] . "</div>";
-          $output .= "<div class='del' onClick='delMyRoute(" . $row['id'] . ")>del</div>";
+          $output .= "<div class='row'>";
+          $output .= "<div class='data'>";
+            $output .= "<div class='name'>" . $row['name'] . "</div>";
+            $output .= "<div class='street'>" . $row['street'] . "</div>";
+            $output .= "<div class='rating'>" . $row['rating'] . "</div>";
+            $output .= "<div class='del' onClick='delMyRoute(" . $row['id'] . ")>del</div>";
+          $output .= "</div>";
+          $output .= "</div>";
     }
     //$output .= "</table>";
       $output .= "</div>";
