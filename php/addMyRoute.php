@@ -24,7 +24,7 @@ $lng = $_GET['lng'];
 
 if(!isset($_COOKIE['travelcounsellorid'])){
   $randomstring = generateRandomString(10);
-  setcookie("travelcounsellorid",$randomstring);
+  setcookie("travelcounsellorid",$randomstring, time()+36000);
   $cookieId = $randomstring;
 } else {
     $cookieId = $_COOKIE['travelcounsellorid'];
