@@ -42,7 +42,7 @@ if ($result = $conn->query($sql)) {
     }
     //$output .= "</table>";
       $output .= "</div>";
-      $output .= "</div">;
+      $output .= "</div">";
     /* free result set */
     $result->free();
 }
