@@ -133,6 +133,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 			
   		</ol>
       <input type="submit" id="submit" value="Recalculate">
+      <input type="button" onclick="history.back();" value="Go back">
       <div id="directions-panel"></div>
     </div>
     <script>
