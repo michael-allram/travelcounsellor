@@ -115,7 +115,8 @@ if(!isset($_COOKIE['travelcounsellorid'])){
     		}
 	
 	 while ($row = $result->fetch_assoc()) {
-		echo "<li>" . $row['street'] . " (" . $row['name'] . ")" . "</li>";
+		//echo "<li>" . $row['street'] . " (" . $row['name'] . ")" . "</li>";
+		 echo "<li value='test'>" . $row['street'] . "</li>";
 			 
 	 }
 			
