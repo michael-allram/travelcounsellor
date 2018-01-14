@@ -44,7 +44,8 @@ if ($result = $conn->query($sql)) {
               //$output .= "<div class='del' onClick='delMyRoute(" . $row['id'] . ")>del</div>";
             $output .= "</div>";
             $output .= "<div class='add-button' onClick='delMyRoute(" . $row['id'] . ")'>";
-              $output .= "del";
+              $output .= "<i class="fa fa-trash" aria-hidden="true"></i>";
+              $output .= " del";
             $output .= "</div>";
           $output .= "</div>";
       
