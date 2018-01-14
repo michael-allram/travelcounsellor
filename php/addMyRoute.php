@@ -25,9 +25,10 @@ $lng = $_GET['lng'];
 if(!isset($_COOKIE['travelcounsellorid'])){
   $randomstring = generateRandomString(10);
   setcookie("travelcounsellorid",$randomstring);
+  $cookieId = $randomstring;
+} else {
+    $cookieId = $_COOKIE['travelcounsellorid'];
 }
-
-$cookieId = $_COOKIE['travelcounsellorid'];
 
 mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'", $conn);
 
