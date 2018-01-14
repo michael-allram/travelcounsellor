@@ -99,7 +99,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
       <ol class='locations'>
 			 
 <?php
-
+/**
 include 'db_connect.php';
 
 
@@ -125,7 +125,7 @@ include 'db_connect.php';
 	$conn->close();
 	
 
-
+**/
 ?>
 
 	      
