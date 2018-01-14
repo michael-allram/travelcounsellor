@@ -6,7 +6,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	      
 	$cookieId = $_COOKIE['travelcounsellorid'];
 
-	include 'db_connect.php';
+	include '/php/db_connect.php';
 
 
 	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
