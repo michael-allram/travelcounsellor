@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=utf-8");
 include 'db_connect.php';
 
 if(!isset($_COOKIE['travelcounsellorid'])){
-  echo "no routes";
+  echo "no routes - no cookie set";
   return 1;
 }
 
