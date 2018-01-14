@@ -71,9 +71,7 @@ function showMyRoute(){
 			$('#myRoute').html(data);
 			//alert("data loaded");
 			
-		} else {
-			$('#myRoute').html('no routes');	
-		}
+		} 
     	
   	});
 }
