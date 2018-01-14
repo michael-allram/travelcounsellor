@@ -1,39 +1,91 @@
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Travel Counsellor</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/7b43fc165d.js"></script>
+        
+        <!--
         <script src="./js/jquery.typewatch.js"></script>
+        -->
+        
         <script src="./js/main.js"></script>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" />
+        
+        <!-- COOKIE LAW -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+            window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                "background": "#343c66",
+                "text": "#cfcfe8"
+               },
+                "button": {
+                    "background": "#f71559"
+                }
+                },
+                "theme": "classic",
+                "position": "bottom-left",
+                "content": {
+                "message": "This website uses permanent first-party cookies to give you the best experience. Some features will not work without cookies.",
+                "dismiss": "Accept",
+                "link": "Learn more"
+                }
+                })});
+            </script>
+        <!-- COOKIE LAW END -->
+        
     </head>
 
     <body>
-        <div id="header">Travelcounsellor</div>
+        <div id="loader"></div>
+        <div id="overlay"></div>
+        <div id="header">
+        	<div class="logo">Travel Counsellor</div>
+        </div>
         <div id="controll-bar">
+            <img src="img/logo_100_2.png">
             <div class="blocks">
                 <div>Starting Position</div>
-                <div><input type="textfield" id="street"><input type="button" value="get Device Position"></div>
+                <!--<div><input type="textfield" id="street"><input class="my-pos-button" type="button" onclick="get_my_location()"></div>-->
+                <div><input type="textfield" id="street" /><i class="fa fa-location-arrow" aria-hidden="true" onclick="get_my_location()"></i></div>
             </div>
             <div class="blocks">
                 <div>What do you search?</div>
                 <div>
-                    <select>
-                        <option value="food">Food</option>
-                        <option value="culture">Culture</option>
-                        <option value="amusement">Amusement</option>
-                    </select> 
+                    <select id="category">
+                        <option value="restaurant">Restaurant</option>
+                        <option value="store">Store</option>
+                        <option value="cafe">Cafe</option>
+                         <option value="bar">Bar</option>
+                         <option value="amusement_park">Amusement Park</option>
+                         <option value="atm">ATM</option>
+                         <option value="casino">Casino</option>
+                         <option value="bakery">Bakery</option>
+                    </select>
                 </div>
             </div>
-            <div class="blocks">
-                <div>View "my Route"</div>
-                <div id="counter">0 Objects</div>
-            </div>
-            
-        
-        </div>
-        <div id="main-area"></div>
-        <div id="footer">&copy; Travelcounsellor 2017</div>
+            <a href="/maps.html" class="blocks big-button" style="display:none">View my Route <div id="counter">0 Objects</div></a>
+            <input class="blocks big-button" type="button" value="Start Search" onclick="street_to_geo()">
 
+        </div>
+        <div id="main-area-headline">Search Results</div>
+        <div id="main-area">
+            no results
+
+        	<div class="content"></div>
+        </div>
+        <div id="myRoute-headline">My Places&nbsp; <span id="navigation"><a href="/php/maps.php" style="color: white"><i class="fa fa-globe" aria-hidden="true"></i> Overview</a>&nbsp; <a href="/php/navigation.php" target="_blank" style="color: white"><i class="fa fa-map-marker" aria-hidden="true"></i> Navigation</a></span></div>
+        
+        <div id="myRoute">MYROUTE</div>
+        <div id="footer">&copy; Travelcounsellor 2017
+          <div><img src="img/powered-by-google/powered_by_google_on_non_white.png"></div>
+        </div>
 
     </body>
 

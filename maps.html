@@ -46,49 +46,60 @@
       }
       #directions-panel {
         margin-top: 10px;
-        background-color: #FFEE77;
+        background-color: #ffffff;
         padding: 10px;
       }
-      
+
       //code for list:
       body.dragging, body.dragging * {
-		cursor: move !important;
-	}
+    		cursor: move !important;
+    	}
 
-	.dragged {
-		position: absolute;
-		opacity: 0.5;
-		z-index: 2000;
-	}
+    	.dragged {
+    		position: absolute;
+    		opacity: 0.5;
+    		z-index: 2000;
+    	}
 
-	ol.example li.placeholder {
-		position: relative;
-		/** More li styles **/
-	}
+    	ol.example li.placeholder {
+    		position: relative;
+    		/** More li styles **/
+    	}
 
-	ol.example li.placeholder:before {
-	position: absolute;
-	/** Define arrowhead **/
-	}
+    	ol.example li.placeholder:before {
+      	position: absolute;
+      	/** Define arrowhead **/
+    	}
     </style>
   </head>
   <body>
     <div id="map"></div>
     <div id="right-panel">
-    <style>
-	li{
-		cursor:url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; 
-		border:solid #000 thin; 
-	}
-	</style>
-    <ol class='locations'>
-			<li value="innsbruck, at">Innsbruck</li>
-			<li value="bozen, at">Bozen</li>
-			<li value="muenchen, at">München</li>
-			<li value="genf, ch">Genf</li>
-		</ol>
-      <input type="submit" id="submit" value="recalc">
-    <div id="directions-panel"></div>
+      <style>
+        body {
+          margin: 0;
+          background-color: #e0e0e0;
+        }
+      	li{
+      		cursor:url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;
+      		border:solid #000 thin;
+          background-color: #ffffff;
+      	}
+  	  </style>
+      <ol class='locations'>
+			 
+
+
+	      
+  			<li value="">Innsbruck, Rennweg 1</li>
+  			<li value="bozen, at">Bozen</li>
+  			<li value="muenchen, at">München</li>
+  			<li value="Madrid, at">Madrid</li>
+				
+			
+  		</ol>
+      <input type="submit" id="submit" value="Recalculate">
+      <div id="directions-panel"></div>
     </div>
     <script>
       function initMap() {
@@ -107,7 +118,7 @@
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var waypts = [];
-		for($i = 1; $i<$(".locations").children().length -1;$i++)
+		    for($i = 1; $i<$(".locations").children().length -1; $i++)
         	waypts.push({location: $(".locations").children()[$i].innerHTML,stopover:true});
         var checkboxArray = document.getElementById('waypoints');
         //for (var i = 0; i < checkboxArray.length; i++) {
@@ -146,17 +157,13 @@
         });
       }
     </script>
-    
-    
-    <script> 
-		
-		$(function  () {
+
+    <script>
+		$(function () {
 			$("ol.locations").sortable();
 		});
-		
-
 		</script>
-    
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxybL6xNd3g83vICS49hg5eyU9z-eGW0E&callback=initMap">
     </script>
