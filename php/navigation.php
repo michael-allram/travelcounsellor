@@ -23,9 +23,12 @@ if(!isset($_COOKIE['travelcounsellorid'])){
         
 	    $output .= "www.google.at/maps/dir/";
 	 while ($row = $result->fetch_assoc()) {
-      $street = $row['street']; 
-		  $output .= str_replace(" ", "+", $street);
-      $output .= "/";
+		$name = $row['name'];
+		$output .= str_replace(" ", "+", $name);
+		$output .= ", ";
+      		$street = $row['street']; 
+		$output .= str_replace(" ", "+", $street);
+     		$output .= "/";
 			 
 	 }
 			
