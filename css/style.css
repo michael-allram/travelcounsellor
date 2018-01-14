@@ -188,3 +188,7 @@ body {
 	z-index: 9999999;
 	position: absolute;
 }
+
+.add-button {
+	cursor: pointer;
+}
