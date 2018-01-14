@@ -1,8 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 if(!isset($_COOKIE['travelcounsellorid'])){
-	echo "no entry because of no cookie";	
-	return 0;
+	header("Location: https://www.travelcounsellor.eu"); /* Redirect browser */
+	exit();
 }
 	      
 	$cookieId = $_COOKIE['travelcounsellorid'];
@@ -17,8 +17,8 @@ if(!isset($_COOKIE['travelcounsellorid'])){
   
     		$row_cnt = $result->num_rows;
     		if($row_cnt < 1) {
-      			echo "no results";
-      			return 1; 
+      			header("Location: https://www.travelcounsellor.eu"); /* Redirect browser */
+			exit();
     		}
         
 	    $output .= "www.google.at/maps/dir/";
@@ -36,9 +36,10 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	$result->free();
 	$conn->close();
   
-  //echo "<a href='" . $output . "'></a>";
-echo "hallo";
-echo $output;
+header("Location: $output"); /* Redirect browser */
+exit();
+
+
 	
 
 
