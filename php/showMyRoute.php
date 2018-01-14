@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=utf-8");
 include 'db_connect.php';
 
 if(!isset($_COOKIE['travelcounsellorid'])){
-  echo "no routes";
+  echo "no places";
   return 1;
 }
 
@@ -18,7 +18,7 @@ if ($result = $conn->query($sql)) {
   
     $row_cnt = $result->num_rows;
     if($row_cnt < 1) {
-      echo "no routes";
+      echo "no places";
       return 1; 
     }
     //$output .= "<div id='myRouteHeadline'>My Route</div>";
