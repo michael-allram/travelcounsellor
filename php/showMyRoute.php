@@ -18,7 +18,7 @@ if ($result = $conn->query($sql)) {
     $output .= "<table>";
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-       $output .= "<tr class='row'><td>" . $row['name'] . "</td><td>" . $row['street']  . "</td><td>" . $row['rating']  . "</td><td>DEL</td></tr>";
+       $output .= "<tr class='row'><td>" . $row['name'] . "</td><td>" . $row['street']  . "</td><td>" . $row['rating']  . "</td><td><a href=javascript:delMyRoute($row['id'])>DEL</a></td></tr>";
      
     }
     $output .= "</table>";
