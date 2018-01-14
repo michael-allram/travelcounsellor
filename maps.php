@@ -6,6 +6,20 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	      
 	$cookieId = $_COOKIE['travelcounsellorid'];
 
+	include 'db_connect.php';
+
+
+	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
+	
+	
+	if ($result = $conn->query($sql)) {
+  
+    		$row_cnt = $result->num_rows;
+    		if($row_cnt < 1) {
+      			echo "<li>no results</li>";
+      			return 1; 
+    		}
+
 ?>
 
 <!DOCTYPE html>
@@ -100,19 +114,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 			 
 <?php
 
-include 'db_connect.php';
 
-
-	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
-	
-	
-	if ($result = $conn->query($sql)) {
-  
-    		$row_cnt = $result->num_rows;
-    		if($row_cnt < 1) {
-      			echo "<li>no results</li>";
-      			return 1; 
-    		}
 /**	
 	 while ($row = $result->fetch_assoc()) {
 		echo "<li>" . $row['street'] . "</li>";
