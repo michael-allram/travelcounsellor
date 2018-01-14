@@ -58,7 +58,7 @@ body {
 }
 
 #main-area {
-	overflow: scroll;
+	overflow-y: scroll;
 	max-height: 400px !important;
 	margin-top: 10px;
 	margin-bottom: 40px;
@@ -69,7 +69,7 @@ body {
 }
 
 #myRoute {
-	overflow: scroll;
+	overflow-y: scroll;
 	height: 300px;
 	margin-top: 10px;
 	margin-bottom: 40px;
