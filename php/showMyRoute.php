@@ -19,7 +19,7 @@ if ($result = $conn->query($sql)) {
     if($row_cnt < 1) {
       return 0; 
     }
-    $output .= "<div id='myRouteHeadline'>My Route</div>";
+    //$output .= "<div id='myRouteHeadline'>My Route</div>";
     $output .= "<div class='datatable'>";
       $output .= "<div class='table-header'>";
         $output .= "<div class='name'>Name</div>";
