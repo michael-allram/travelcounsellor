@@ -1,5 +1,12 @@
+<?php
+if(!isset($_COOKIE['travelcounsellorid'])){
+	echo "<li>no entry because of no cookie</li>";	
+	return 0;
+}
+	      
+	$cookieId = $_COOKIE['travelcounsellorid'];
 
-
+?>
 
 <!DOCTYPE html>
 <html>
@@ -95,12 +102,7 @@
 
 include 'db_connect.php';
 
-if(!isset($_COOKIE['travelcounsellorid'])){
-	echo "<li>no entry because of no cookie</li>";	
-	return 0;
-}
-	      
-	$cookieId = $_COOKIE['travelcounsellorid'];
+
 	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
 	
 	
