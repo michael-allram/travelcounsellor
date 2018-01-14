@@ -90,7 +90,7 @@ function geo_to_street(lat,long){
 		} else {
 			var city = obj.city;	
 		}
-		alert(obj.city + obj.village + city);
+		//alert(obj.city + obj.village + city);
 		var string = obj.road + " " + obj.house_number + " " + city + " " + obj.country;
 		$('#street').val(string);
 		stop_loader();
