@@ -69,7 +69,7 @@ function showMyRoute(){
   	.done(function( data ) {
 		if(data !== 0 && data !== 1) {
 			$('#myRoute').html(data);
-			$('#navigation').show();
+			
 			//alert("data loaded");
 			
 		} 
