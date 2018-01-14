@@ -1,3 +1,36 @@
+<?php
+
+include 'db_connect.php';
+
+if(isset($_COOKIE['travelcounsellorid'])){
+	$cookieId = $_COOKIE['travelcounsellorid'];
+	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
+	
+	
+	if ($result = $conn->query($sql)) {
+  
+    		//$row_cnt = $result->num_rows;
+    		//if($row_cnt < 1) {
+      		//	echo "no routes";
+      		//	return 1; 
+    		//}
+	$i = 0;
+	 while ($row = $result->fetch_assoc()) {
+		$street_array[$i] = $row['street'];
+		$i++;	 
+	 }
+		
+		
+	}
+	$result->free();
+	$conn->close();
+	
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -87,10 +120,20 @@
       	}
   	  </style>
       <ol class='locations'>
+			 <?php
+	      		if($i==0){echo "<li>no results</li>";} else {
+				for($j=0;$j<$i;$j++){
+					echo "<li>" . $street_array[$i] . "</li>";	
+				}
+			}
+	      
+	      		?>
   			<li value="">Innsbruck, Rennweg 1</li>
   			<li value="bozen, at">Bozen</li>
   			<li value="muenchen, at">München</li>
   			<li value="Madrid, at">Madrid</li>
+				
+			
   		</ol>
       <input type="submit" id="submit" value="Recalculate">
       <div id="directions-panel"></div>
