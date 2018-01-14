@@ -68,7 +68,9 @@ function showMyRoute(){
 	})
   	.done(function( data ) {
 			$('#myRoute').html(data);
-			if(data !== "no route") {
+			if(data == "no routes") {
+				$('#navigation').hide();	
+			} else {
 				$('#navigation').show();	
 			}
 			//alert("data loaded");
