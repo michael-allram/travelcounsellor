@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 if(!isset($_COOKIE['travelcounsellorid'])){
 	echo "no entry because of no cookie";	
 	return 0;
