@@ -48,6 +48,19 @@ function addMyRoute(id, name, street, rating, lat, lng){
   	});
 }
 
+function delMyRoute(id) {
+	$.ajax({
+  		method: "GET",
+  		url: "/php/delMyRoute.php",
+  		data: { id: id }
+	})
+  	.done(function( msg ) {
+		//alert("finished");
+    	alert(msg);
+	showMyRoute();
+  	});	
+}
+
 function showMyRoute(){
 	$.ajax({
   		method: "GET",
