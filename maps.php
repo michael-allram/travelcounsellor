@@ -99,7 +99,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
       <ol class='locations'>
 			 
 <?php
-/**
+
 include 'db_connect.php';
 
 
@@ -113,19 +113,19 @@ include 'db_connect.php';
       			echo "<li>no results</li>";
       			return 1; 
     		}
-	
+/**	
 	 while ($row = $result->fetch_assoc()) {
 		echo "<li>" . $row['street'] . "</li>";
 			 
 	 }
-		
+**/		
 		
 	}
-	$result->free();
+	//$result->free();
 	$conn->close();
 	
 
-**/
+
 ?>
 
 	      
