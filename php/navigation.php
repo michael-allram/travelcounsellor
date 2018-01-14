@@ -36,7 +36,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	$result->free();
 	$conn->close();
   
-header("Location: "$output""); /* Redirect browser */
+header("Location: $output"); /* Redirect browser */
 exit();
 
 
