@@ -32,7 +32,9 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	$result->free();
 	$conn->close();
   
-  echo "<a href='" . $output . "'></a>";
+  //echo "<a href='" . $output . "'></a>";
+echo "hallo";
+echo $output;
 	
 
 
