@@ -55,7 +55,8 @@ function showMyRoute(){
   	.done(function( data ) {
 		if(data !== 0) {
 			$('#myRoute').html(data);
-			alert("data loaded");
+			//alert("data loaded");
+			
 		}
     	
   	});
@@ -144,6 +145,7 @@ function get_places2(lat, long) {
     	sort_json(msg, 'rating_over_distance', false);
     	$('#main-area').html(json_to_table(msg));
 		stop_loader();
+		showMyRoute();
   	});
 }
 
