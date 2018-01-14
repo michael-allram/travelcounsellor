@@ -115,12 +115,12 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 <?php
 
 
-/**	
+	
 	 while ($row = $result->fetch_assoc()) {
 		echo "<li>" . $row['street'] . "</li>";
 			 
 	 }
-**/		
+		
 		
 	}
 	//$result->free();
