@@ -70,10 +70,9 @@ body {
 
 #myRoute {
 	overflow-y: scroll;
-	height: 300px;
+	max-height: 200px;
 	margin-top: 10px;
 	margin-bottom: 40px;
-	height: auto;
 	margin-left: 5%;
 	margin-right: 5%;
 	background-color: #e0e0e0;
