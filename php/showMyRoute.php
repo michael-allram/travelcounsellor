@@ -14,6 +14,11 @@ $sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
 
 
 if ($result = $conn->query($sql)) {
+  
+    $row_cnt = $result->num_rows;
+    if($row_cnt < 1) {
+      return 0; 
+    }
     $output .= "<div id='myRouteHeadline'>My Route</div>";
     $output .= "<table>";
     /* fetch associative array */
