@@ -21,7 +21,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 			exit();
     		}
         
-	    $output .= "www.google.at/maps/dir/";
+	    $output .= "https://www.google.at/maps/dir/";
 	 while ($row = $result->fetch_assoc()) {
 		$name = $row['name'];
 		$output .= str_replace(" ", "+", $name);
@@ -36,7 +36,7 @@ if(!isset($_COOKIE['travelcounsellorid'])){
 	$result->free();
 	$conn->close();
   
-header("Location: $output"); /* Redirect browser */
+header("Location: "$output""); /* Redirect browser */
 exit();
 
 
