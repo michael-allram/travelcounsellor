@@ -44,6 +44,7 @@ function addMyRoute(id, name, street, rating, lat, lng){
   	.done(function( msg ) {
 		//alert("finished");
     	alert(msg);
+	showMyRoute();
   	});
 }
 
@@ -145,7 +146,7 @@ function get_places2(lat, long) {
     	sort_json(msg, 'rating_over_distance', false);
     	$('#main-area').html(json_to_table(msg));
 		stop_loader();
-		showMyRoute();
+		
   	});
 }
 
