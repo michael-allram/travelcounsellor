@@ -1,33 +1,3 @@
-<?php
-
-include 'db_connect.php';
-
-if(isset($_COOKIE['travelcounsellorid'])){
-	$cookieId = $_COOKIE['travelcounsellorid'];
-	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
-	
-	
-	if ($result = $conn->query($sql)) {
-  
-    		//$row_cnt = $result->num_rows;
-    		//if($row_cnt < 1) {
-      		//	echo "no routes";
-      		//	return 1; 
-    		//}
-	$i = 0;
-	 while ($row = $result->fetch_assoc()) {
-		$street_array[$i] = $row['street'];
-		$i++;	 
-	 }
-		
-		
-	}
-	$result->free();
-	$conn->close();
-	
-}
-
-?>
 
 
 
@@ -120,14 +90,43 @@ if(isset($_COOKIE['travelcounsellorid'])){
       	}
   	  </style>
       <ol class='locations'>
-			 <?php
-	      		if($i==0){echo "<li>no results</li>";} else {
-				for($j=0;$j<$i;$j++){
-					echo "<li>" . $street_array[$i] . "</li>";	
-				}
-			}
+			 
+<?php
+
+include 'db_connect.php';
+
+if(!isset($_COOKIE['travelcounsellorid'])){
+	echo "<li>no entry because of no cookie</li>";	
+	return 0;
+}
 	      
-	      		?>
+	$cookieId = $_COOKIE['travelcounsellorid'];
+	$sql = "SELECT * FROM my_route WHERE cookie_id = '$cookieId'";
+	
+	
+	if ($result = $conn->query($sql)) {
+  
+    		$row_cnt = $result->num_rows;
+    		if($row_cnt < 1) {
+      			echo "<li>no results</li>";
+      			return 1; 
+    		}
+	
+	 while ($row = $result->fetch_assoc()) {
+		echo "<li>" . $row['street'] . "</li>";
+			 
+	 }
+		
+		
+	}
+	$result->free();
+	$conn->close();
+	
+
+
+?>
+
+	      
   			<li value="">Innsbruck, Rennweg 1</li>
   			<li value="bozen, at">Bozen</li>
   			<li value="muenchen, at">München</li>
