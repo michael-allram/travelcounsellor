@@ -8,7 +8,7 @@ body {
 	background-color: #e0e0e0;
 	background-image: url("../img/background.jpg");
 	font-family: 'Heebo', sans-serif;
-	overflow: scroll;
+	overflow: auto;
 	min-width: 675;
 }
 
