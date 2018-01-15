@@ -70,7 +70,7 @@ body {
 	height: auto;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: #e0e0e0;
+	background-color: #e0e0e0aa;
 }
 
 #main-area-headline, #myRoute-headline {
@@ -87,7 +87,7 @@ body {
 	margin-bottom: 40px;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: #e0e0e0;
+	background-color: #e0e0e0aa;
 }
 
 .content {
