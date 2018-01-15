@@ -12,6 +12,10 @@ body {
 	min-width: 675;
 }
 
+#clickableAwesomeFont {
+     cursor: pointer
+}
+
 #header {
 	background-color: #505050;
 	width: 100%;
