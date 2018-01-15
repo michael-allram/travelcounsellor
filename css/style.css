@@ -64,7 +64,7 @@ body {
 
 #main-area {
 	overflow-y: auto;
-	height: 400px !important;
+	height: 397px !important;
 	margin-top: 10px;
 	margin-bottom: 40px;
 	height: auto;
@@ -82,7 +82,7 @@ body {
 
 #myRoute {
 	overflow-y: auto;
-	max-height: 300px;
+	max-height: 145px;
 	margin-top: 10px;
 	margin-bottom: 40px;
 	margin-left: 5%;
