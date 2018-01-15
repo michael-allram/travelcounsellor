@@ -100,6 +100,10 @@ body {
 	border-top: 2px solid #0465b2;
 }
 
+.row:hover {
+	background-color: #ffffff;
+}
+
 .name {
 	width: 35%;
 }
@@ -110,24 +114,23 @@ body {
 
 .rating {
 	width: 5%;
+	text-align: center;
 }
 
 .distance {
 	width: 7%;
+	text-align: center;
 }
 
 .opened {
 	width: 5%;
+	text-align: center;
 }
 
 .data {
 	width: 94%;
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.data:hover {
-	background-color: #ffffff;
 }
 
 .table-header {
