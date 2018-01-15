@@ -9,6 +9,7 @@ body {
 	background-image: url("../img/background.jpg");
 	font-family: 'Heebo', sans-serif;
 	overflow: scroll;
+	min-width: 675;
 }
 
 #header {
