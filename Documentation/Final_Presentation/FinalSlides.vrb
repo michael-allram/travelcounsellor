@@ -1,0 +1,25 @@
+\frametitle{Example game: Game 1, reduced version}
+\scriptsize
+\begin{minted}{gdl}
+; Terminal
+(<= terminal
+    (true (box (negated p) null)) )
+
+; Goal
+(<= (goal solver 100)
+    (true (box (negated p) null)) )
+
+; terminate after a certain amount of moves or if no move is available
+(<= terminal
+    (true (step 11)) )
+(<= terminal
+    (not (not_stuck solver)))
+
+; counts moves
+(succ 1 2)
+(succ 2 3)
+(succ 3 4)
+(succ 4 5)
+(succ 5 6)
+...
+\end{minted}

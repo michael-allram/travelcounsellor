@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Background}{3}{0}{1}
+\beamer@sectionintoc {2}{Solution}{8}{0}{2}
+\beamer@sectionintoc {3}{Evaluation}{15}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{22}{0}{4}
+\beamer@sectionintoc {5}{Questions?}{24}{0}{5}
+\beamer@sectionintoc {6}{Example Game}{25}{0}{6}
