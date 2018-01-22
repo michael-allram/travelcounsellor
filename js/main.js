@@ -97,10 +97,11 @@ function geo_to_street(lat,long){
     });
 }
 
-function get_weather2() {
+function get_weather2(lat, lon) {
+	var location = lat + " " + lon;
 	alert("get weather started");
 	$.simpleWeather({
-    location: 'Austin, TX',
+    location: location,
     woeid: '',
     unit: 'f',
     success: function(weather) {
@@ -191,7 +192,7 @@ function get_places2(lat, long) {
     	sort_json(msg, 'rating_over_distance', false);
     	$('#main-area').html(json_to_table(msg));
 		stop_loader();
-		get_weather2();
+		get_weather2(lat, long);
 		
   	});
 }
