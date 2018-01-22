@@ -13,10 +13,6 @@ body {
 	min-width: 675;
 }
 
-#main-area-headline {
-	height: auto;
-}
-
 #clickableAwesomeFont {
      cursor: pointer
 }
@@ -174,10 +170,9 @@ i {
 
 #main-area {
 	overflow-y: auto;
-	height: 397px !important;
+	height: 397px;
 	margin-top: 10px;
 	margin-bottom: 40px;
-	height: auto;
 	margin-left: 5%;
 	margin-right: 5%;
 	background-color: #e0e0e0aa;
@@ -188,6 +183,7 @@ i {
 	margin-left: 5%;
 	margin-top: 20px;
 	color: white;
+	height: auto;
 }
 
 #myRoute {
