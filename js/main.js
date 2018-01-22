@@ -98,7 +98,7 @@ function geo_to_street(lat,long){
 }
 
 function get_weather2(lat, lon) {
-	var location = lat + " " + lon;
+	var location = lat + ", " + lon;
 	alert("get weather started");
 	$.simpleWeather({
     location: location,
