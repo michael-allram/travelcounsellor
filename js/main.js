@@ -138,7 +138,7 @@ function street_to_geo(){
 	        //alert(obj.latitude + " " + obj.longitude);
 
 		get_places2(obj.latitude, obj.longitude);
-	    	get_weather2();
+	    	
 
 		//get_places(obj.latitude, obj.longitude);
 	        //return obj;
@@ -191,6 +191,7 @@ function get_places2(lat, long) {
     	sort_json(msg, 'rating_over_distance', false);
     	$('#main-area').html(json_to_table(msg));
 		stop_loader();
+		get_weather2();
 		
   	});
 }
