@@ -189,8 +189,8 @@ function get_places2(lat, long) {
     	add_details(msg, lat, long)
     	sort_json(msg, 'rating_over_distance', false);
     	$('#main-area').html(json_to_table(msg));
-		stop_loader();
 		get_weather2(lat, long);
+		stop_loader();
 		
   	});
 }
