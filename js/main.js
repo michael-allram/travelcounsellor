@@ -103,7 +103,7 @@ function get_weather2(lat, lon) {
 	$.simpleWeather({
     location: location,
     woeid: '',
-    unit: 'f',
+    unit: 'm',
     success: function(weather) {
 	    alert("got weather");
       html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
