@@ -43,7 +43,7 @@ function addMyRoute(id, name, street, rating, lat, lng){
 	})
   	.done(function( msg ) {
 		//alert("finished");
-    	alert(msg);
+    	//alert(msg);
 	showMyRoute();
   	});
 }
@@ -56,7 +56,7 @@ function delMyRoute(id) {
 	})
   	.done(function( msg ) {
 		//alert("finished");
-    	alert(msg);
+    	//alert(msg);
 	showMyRoute();
   	});	
 }
