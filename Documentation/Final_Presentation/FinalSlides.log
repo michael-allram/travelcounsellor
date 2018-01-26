@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.10.5)  23 JAN 2018 15:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.10.5)  26 JAN 2018 13:14
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**FinalSlides.tex
+**FinalSlides
 (./FinalSlides.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 7 languages loaded.
@@ -1022,7 +1022,7 @@ orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 21.
- (./FinalSlides.nav) <resources/logo.png, id=25, 1284.8pt x 722.7pt>
+ (./FinalSlides.nav) <resources/logo.png, id=21, 1284.8pt x 722.7pt>
 File: resources/logo.png Graphic file (type png)
  <use resources/logo.png>
 Package pdftex.def Info: resources/logo.png used on input line 26.
@@ -1038,14 +1038,14 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./resources/logo.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 37.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 38.
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 37.
+LaTeX Font Info:    No file OMScmss.fd. on input line 38.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 37.
+(Font)              for symbol `textbullet' on input line 38.
 
 [2
 
@@ -1054,17 +1054,17 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 67.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 66.
+line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -1084,20 +1084,14 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `FinalSlides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (./FinalSlides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 69.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
+Package rerunfilecheck Info: File `FinalSlides.out' has not changed.
+(rerunfilecheck)             Checksum: F17A68200FCBCD0B91AAB83A5C5C9C3A;93.
 
-
-Package rerunfilecheck Warning: File `FinalSlides.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `FinalSlides.out':
-(rerunfilecheck)             Before: F46310EB97607D04952C801050A6E1D8;136
-(rerunfilecheck)             After:  F17A68200FCBCD0B91AAB83A5C5C9C3A;93.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1105,28 +1099,25 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 20220 strings out of 494968
- 403228 string characters out of 6178964
- 463350 words of memory out of 5000000
- 22966 multiletter control sequences out of 15000+600000
+ 20207 strings out of 494968
+ 403118 string characters out of 6178964
+ 463348 words of memory out of 5000000
+ 22954 multiletter control sequences out of 15000+600000
  11946 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,13n,95p,1766b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Outline0.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on FinalSlides.pdf (6 pages, 93655 bytes).
+ 71i,13n,95p,1762b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on FinalSlides.pdf (6 pages, 94040 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 
